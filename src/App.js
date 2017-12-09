@@ -2,6 +2,9 @@
 import _ from "lodash";
 import React from "react";
 import { compose, withProps, withStateHandlers } from "recompose";
+import BeachCheck from './components/checkboxes/beach'
+import AtmCheck from './components/checkboxes/atm'
+// import styled from 'styled-components'
 import {
   withScriptjs,
   withGoogleMap,
@@ -9,7 +12,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps"
-import { Grid, Sidebar, Segment, Menu, Icon, Button, Checkbox } from 'semantic-ui-react'
+import { Dropdown, Grid, Sidebar, Segment, Menu, Icon, Button, Checkbox, Label, List, Container, Input } from 'semantic-ui-react'
 const style = require('./mapstyle.json')
 // const google = window.google
 const icon = {
@@ -17,6 +20,7 @@ const icon = {
   fill: 'yellow',
   stroke: 'blue',
 }
+
 
 const MyMapComponent = compose(
   withStateHandlers(() => ({
@@ -95,41 +99,74 @@ class ReactGoogleMaps extends React.Component {
     const { visible } = this.state
     return (
       <div>
-        <Button onClick={this.toggleVisibility}>Toggle Visibility</Button>
-        <Grid>
-          <Grid.Row>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width={1}>
-            </Grid.Column>
-            <Grid.Column width={14}>
-            <Sidebar.Pushable as={Segment}>
-              <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical color='red'>
-                <Menu.Item name='home'>
-                  <Icon name='home' />
-                  Home
-                </Menu.Item>
-                <Menu.Item name='gamepad'>
-                    {/* <Segment compact inverted color='black'> */}
-                      <Icon name='money' />
-                      ATM
-                    {/* </Segment> */}
-                      <Checkbox slider />
-                </Menu.Item>
-                <Menu.Item name='camera'>
-                  <Icon name='camera' />
-                  Channels
-                </Menu.Item>
+        <Menu attached='top'>
+          <Menu.Item onClick={this.toggleVisibility} name='show' active={visible}>
+            <Icon name='grid layout' size='large' />
+            </Menu.Item>
+          <Menu.Menu position='right'>
+            <div className='ui right aligned category search item'>
+              <div className='ui transparent icon input'>
+                <input className='prompt' type='text' placeholder='Search animals...' />
+                <i className='search link icon' />
+              </div>
+              <div className='results' />
+            </div>
+          </Menu.Menu>
+        </Menu>
+        <Sidebar.Pushable as={Segment} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0,  }}>
+          <Sidebar as={Menu} animation='overlay' width='wide' visible={visible} icon='labeled' vertical style={{ background: '#354051', width: '280px', paddingTop: '30px'}} >
+            <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
+              <Container>
+                <Grid>
+                  <Grid.Column width={12}>
+                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px'}}>
+                      <Icon inverted name='shop' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE'}}/>
+                  Supermarkets
+                </div>
+                  </Grid.Column>
+                  <Grid.Column width={2}>
+                  </Grid.Column>
+                </Grid>
+              </Container>
+            </Menu.Item>
+            <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
+              <Container>
+                <Grid>
+                    <Grid.Column width={12}>
+                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
+                      <Icon inverted name='umbrella' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
+                      Beaches
+                    </div>
+                    </Grid.Column>
+                    <Grid.Column width={2} >
+                      <BeachCheck onClick={this.toggleVisibility}/>
+                    </Grid.Column>
+                </Grid>
+              </Container>
+            </Menu.Item>
+            <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
+              <Container>
+                <Grid>
+                  <Grid.Column width={12}>
+                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
+                      <Icon inverted name='money' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
+                  ATM
+                </div>
+                </Grid.Column>
+                <Grid.Column widht={2}>
+                    <AtmCheck/>
+                </Grid.Column>
+                </Grid>
+              </Container>
+            </Menu.Item>
               </Sidebar>
               <Sidebar.Pusher>
-                <Segment basic style={{padding: 0}}>
+                <Segment basic style={{padding: 0, margin: 0}}>
                   <MyMapComponent key="map" />
                 </Segment>
               </Sidebar.Pusher>
             </Sidebar.Pushable>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+            
     </div>
     )
   } 

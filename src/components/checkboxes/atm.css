@@ -1,0 +1,90 @@
+body {
+  font-family: Avenir;
+  font-size: 16px;
+  
+}
+
+.label-cbx {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.label-cbx input:checked+.checkbox {
+  border-color: #43BC8A;
+}
+
+.label-cbx input:checked+.checkbox svg path {
+  fill: #43BC8A;
+}
+
+.label-cbx input:checked+.checkbox svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx:hover .checkbox svg path {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx .checkbox {
+  position: relative;
+  top: 2px;
+  float: left;
+  margin-left: 25px;
+  margin-top: -10px;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #A0ABBE;
+  border-radius: 3px;
+  fill: #43BC8A;
+}
+
+.label-cbx .checkbox svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.label-cbx .checkbox svg path {
+  fill: none;
+  stroke: #43BC8A;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.2s ease;
+}
+
+.label-cbx .checkbox svg polyline {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.3s ease;
+}
+
+.label-cbx>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-atm {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.invisible {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
