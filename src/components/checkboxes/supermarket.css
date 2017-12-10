@@ -3,29 +3,29 @@ body {
   font-size: 16px;
 }
 
-.label-cbx-beach {
+.label-cbx-super {
   user-select: none;
   cursor: pointer;
   margin-bottom: 0;
 }
 
-.label-cbx-beach input:checked+.checkbox-beach {
-  border-color: #20C2E0;
+.label-cbx-super input:checked+.checkbox-super {
+  border-color: #A6419C;
 }
 
-.label-cbx-beach input:checked+.checkbox-beach svg path {
-  fill: #20C2E0;
+.label-cbx-super input:checked+.checkbox-super svg path {
+  fill: #A6419C;
 }
 
-.label-cbx-beach input:checked+.checkbox-beach svg polyline {
+.label-cbx-super input:checked+.checkbox-super svg polyline {
   stroke-dashoffset: 0;
 }
 
-.label-cbx-beach:hover .checkbox-beach svg path {
+.label-cbx-super:hover .checkbox-super svg path {
   stroke-dashoffset: 0;
 }
 
-.label-cbx-beach .checkbox-beach {
+.label-cbx-super .checkbox-super {
   position: relative;
   top: 2px;
   float: left;
@@ -36,18 +36,18 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #20C2E0;
+  fill: #A6419C;
 }
 
-.label-cbx-beach .checkbox-beach svg {
+.label-cbx-super .checkbox-super svg {
   position: absolute;
   top: -2px;
   left: -2px;
 }
 
-.label-cbx-beach .checkbox-beach svg path {
+.label-cbx-super .checkbox-super svg path {
   fill: none;
-  stroke: #20C2E0;
+  stroke: #A6419C;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -56,7 +56,7 @@ body {
   transition: all 0.5s ease;
 }
 
-.label-cbx-beach .checkbox-beach svg polyline {
+.label-cbx-super .checkbox-super svg polyline {
   fill: none;
   stroke: #FFF;
   stroke-width: 2;
@@ -67,12 +67,12 @@ body {
   transition: all 0.5s ease;
 }
 
-.label-cbx-beach>span {
+.label-cbx-super>span {
   pointer-events: none;
   vertical-align: middle;
 }
 
-.cntr-beach {
+.cntr-super {
   position: absolute;
   top: 45%;
   left: 0;

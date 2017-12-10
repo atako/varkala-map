@@ -54,7 +54,7 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 71px;
   stroke-dashoffset: 71px;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 
 .label-cbx .checkbox svg polyline {
@@ -65,7 +65,7 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 18px;
   stroke-dashoffset: 18px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .label-cbx>span {
