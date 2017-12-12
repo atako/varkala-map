@@ -8,8 +8,8 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps"
+import { showFilter, showPortal } from '../actions'
 const style = require('../mapstyle.json')
-// import default from "semantic-ui-react/dist/commonjs/elements/Loader/Loader";
 
 const MyMapComponent = compose(
   withStateHandlers(() => ({
@@ -29,7 +29,7 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )
-  (props => (
+  (props =>(
     <GoogleMap
       defaultZoom={14}
       defaultCenter={{ lat: 8.737457, lng: 76.708158 }}
@@ -47,40 +47,36 @@ const MyMapComponent = compose(
       }}
       fullscreenControl={false}
     >
-      <Marker
-        position={{ lat: 8.737457, lng: 76.708158 }}
-        icon={{
-          path: google.maps.SymbolPath.CIRCLE,
-          fillColor: '#5d00ff',
-          scale: 5,
-          strokeColor: '#5d00ff',
-          strokeWeight: 5
-        }}
-        onClick={props.onToggleOpen}
-      >
-        {props.isOpen &&
+    {props.objects.map((item, i) => 
+        <Marker
+          key={i}
+          position={{ lat: item.lat, lng: item.lng }}
+          icon={{
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: item.color,
+            scale: 4,
+            strokeColor: item.color,
+            strokeWeight: 8
+          }}
+          onClick={props.togglePortal}
+          visible={item.visible}
+        >
+        {/* {props.isOpen &&
           <InfoWindow onCloseClick={props.onToggleOpen}>
             <div>Krishna market</div>
-          </InfoWindow>}
+          </InfoWindow>} */}
       </Marker>
-      <Marker
-        position={{ lat: 8.751191, lng: 76.701988 }}
-        icon={{
-          path: google.maps.SymbolPath.CIRCLE,
-          fillColor: '#5d00ff',
-          scale: 4,
-          strokeColor: '#5d00ff',
-          strokeWeight: 2
-        }}
-        onClick={props.onToggleOpen}
-      >
-        {props.isOpen &&
-          <InfoWindow onCloseClick={props.onToggleOpen}>
-            <div>Big supermarket</div>
-          </InfoWindow>}
-      </Marker>
+    )}
     </GoogleMap>
   )
   )
 
-  export default MyMapComponent
+export default class Map extends React.Component {
+  togglePortal = () => this.props.dispatch(showPortal({ showPortal: this.props.ui.showPortal }))
+  render() {
+    return <MyMapComponent
+        togglePortal={this.togglePortal}
+        objects ={this.props.objects}
+     />
+  }
+}

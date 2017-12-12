@@ -1,22 +1,24 @@
 import React from 'react'
-import MyMapComponent from './map'
-import BeachCheck from './checkboxes/beach'
+import Map from '../containers/map'
+import BeachCheck from '../containers/checkboxes/beach'
 import AtmCheck from './checkboxes/atm'
-import SuperCheck from './checkboxes/supermarket'
-import { Dropdown, Grid, Sidebar, Segment, Menu, Icon, Button, Checkbox, Label, List, Container, Input, TransitionablePortal } from 'semantic-ui-react'
+import SuperCheck from '../containers/checkboxes/supermarket'
+import Portal from '../containers/portal'
+import { showFilter, showPortal } from '../actions'
+import { Menu, Icon, Sidebar, Segment, Container, Grid, Checkbox } from 'semantic-ui-react'
 
 export default class Interface extends React.Component {
-  state = { visible: true, sidebar: true }
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
-  handleSidebar = () => this.setState({ sidebar: !this.state.sidebar })
+
+  toggleVisibility = () => this.props.dispatch(showFilter({ showFilter: this.props.ui.showFilter }))
+  togglePortal = () => this.props.dispatch(showPortal({ showPortal: this.props.ui.showPortal }))
+
   render() {
-    const { visible, sidebar } = this.state
     return (
       <div>
         <Menu inverted icon='labeled' attached='top' style={{
           background: '#37394D', borderBottom: '#191a23', borderRadius: '0', borderTop: '0'
         }}>
-          <Menu.Item onClick={this.toggleVisibility} name='show' active={visible} style={{ paddingTop: '25px' }}>
+          <Menu.Item onClick={this.toggleVisibility} name='show' active={this.props.ui.showFilter} style={{ paddingTop: '25px' }}>
             <Icon name='content' size='huge' />
           </Menu.Item>
           <Menu.Item style={{ width: '197px', fontFamily: 'Arvo', fontSize: '20px', marginTop: '10px' }}>
@@ -42,6 +44,9 @@ export default class Interface extends React.Component {
             <Icon name='plane' />
             Tickets
           </Menu.Item>
+          <Menu.Item>
+            <Checkbox toggle checked={this.props.ui.showPortal} onClick={this.togglePortal} />
+          </Menu.Item>
           <Menu.Menu position='right'>
             <div className='ui right aligned category search item'>
               <div className='ui transparent icon input'>
@@ -58,7 +63,7 @@ export default class Interface extends React.Component {
               <Container>
                 <Grid>
                   <Grid.Column width={12}>
-                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Plex', fontSize: '16px', marginLeft: '10px' }}>
+                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                       <Icon inverted name='shop' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
                       Supermarkets
                 </div>
@@ -102,20 +107,11 @@ export default class Interface extends React.Component {
           </Sidebar>
           <Sidebar.Pusher>
             <Segment basic style={{ padding: 0, margin: 0 }}>
-              <MyMapComponent key="map" />
+              <Map />
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
-        <TransitionablePortal open={this.props.ui.showPortal} transition={{ animation: 'slide down', duration: 400 }}>
-          <Segment color='orange' style={{ left: '84.6%', position: 'fixed', top: '10%', zIndex: 1000, height: '60%', width: '200px', paddingTop: '6px' }}>
-            <a href='#' onClick={this.handleSidebar}>
-              <Icon name='close' size='large' corner={true} style={{ paddingLeft: '163px', paddingBottom: '20px', marginBottom: '23px' }} />
-            </a>
-
-            <p>Portals have tons of great callback functions to hook into.</p>
-            <p>To close, simply click the close button or click away</p>
-          </Segment>
-        </TransitionablePortal>
+        <Portal/>
       </div>
     )
   }
