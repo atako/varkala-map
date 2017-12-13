@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { handleActions, handleAction } from 'redux-actions'
-import _ from 'lodash'
+import { set, reduce} from 'lodash'
 import * as actions from '../actions'
 
 const ui = handleActions({
@@ -17,11 +17,10 @@ const objects = handleActions({
     return state
   },
   [actions.changeFilter](state, { payload: category}) {
-    const result = _.reduce(state, (result, value, key) => {
-      value.category === category.category ? result.push(_.set(value, 'visible', category.state)) : result.push(value)
+    const result = reduce(state, (result, value, key) => {
+      value.category === category.category ? result.push(set(value, 'visible', category.state)) : result.push(value)
       return result
     }, [])
-    // console.log(result)
     return result
   }
 },

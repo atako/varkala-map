@@ -8,11 +8,103 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
+    <style>
+      body {
+        background-color: white;
+      }
+    .loader
+        {
+            font-family: sans-serif;
+            font-size: 14px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px; 
+        }
+      @-webkit-keyframes ball-scale-ripple-multiple {
+  0% {
+    -webkit-transform: scale(.1);
+    transform: scale(.1);
+    opacity: 1
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: .7
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes ball-scale-ripple-multiple {
+  0% {
+    -webkit-transform: scale(.1);
+    transform: scale(.1);
+    opacity: 1
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: .7
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+.ball-scale-ripple-multiple {
+  position: relative;
+  -webkit-transform: translateY(-25px);
+  transform: translateY(-25px)
+}
+
+.ball-scale-ripple-multiple>div:nth-child(0) {
+  -webkit-animation-delay: -.8s;
+  animation-delay: -.8s
+}
+
+.ball-scale-ripple-multiple>div:nth-child(1) {
+  -webkit-animation-delay: -.6s;
+  animation-delay: -.6s
+}
+
+.ball-scale-ripple-multiple>div:nth-child(2) {
+  -webkit-animation-delay: -.4s;
+  animation-delay: -.4s
+}
+
+.ball-scale-ripple-multiple>div:nth-child(3) {
+  -webkit-animation-delay: -.2s;
+  animation-delay: -.2s
+}
+
+.ball-scale-ripple-multiple>div {
+  position: absolute;
+  top: 26px;
+  /* left: -1px; */
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2px solid #B5CB31;
+  -webkit-animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
+  animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8)
+}
+
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="css/demo.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/loaders.min.css"> -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="node_modules/@ibm/type/css/ibm-type.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,600,700" rel="stylesheet"> -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,600,700" onload="this.rel='stylesheet'">
+
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css" media="print"></link> -->
+    <link rel="preload" as="style" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css" onload="this.rel='stylesheet'">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,7 +120,18 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    
+    <div id="app">
+      <div class="loader">
+        Loading...
+        <div class="ball-scale-ripple-multiple">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

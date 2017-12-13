@@ -1,9 +1,7 @@
 import React from 'react'
 import Map from '../containers/map'
-import BeachCheck from '../containers/checkboxes/beach'
-import AtmCheck from './checkboxes/atm'
-import SuperCheck from '../containers/checkboxes/supermarket'
 import Portal from '../containers/portal'
+import LeftSidebar from '../containers/leftSidebar'
 import { showFilter, showPortal } from '../actions'
 import { Menu, Icon, Sidebar, Segment, Container, Grid, Checkbox } from 'semantic-ui-react'
 
@@ -58,53 +56,7 @@ export default class Interface extends React.Component {
           </Menu.Menu>
         </Menu>
         <Sidebar.Pushable as={Segment} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0, }}>
-          <Sidebar as={Menu} animation='overlay' width='wide' visible={this.props.ui.showFilter} icon='labeled' vertical style={{ background: '#354051', width: '280px', paddingTop: '30px' }} >
-            <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
-              <Container>
-                <Grid>
-                  <Grid.Column width={12}>
-                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
-                      <Icon inverted name='shop' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                      Supermarkets
-                </div>
-                  </Grid.Column>
-                  <Grid.Column width={2}>
-                    <SuperCheck />
-                  </Grid.Column>
-                </Grid>
-              </Container>
-            </Menu.Item>
-            <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
-              <Container>
-                <Grid>
-                  <Grid.Column width={12}>
-                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
-                      <Icon inverted name='umbrella' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                      Beaches
-                    </div>
-                  </Grid.Column>
-                  <Grid.Column width={2} >
-                    <BeachCheck onClick={this.toggleVisibility} />
-                  </Grid.Column>
-                </Grid>
-              </Container>
-            </Menu.Item>
-            <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
-              <Container>
-                <Grid>
-                  <Grid.Column width={12}>
-                    <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
-                      <Icon inverted name='money' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                      ATM
-                </div>
-                  </Grid.Column>
-                  <Grid.Column widht={2}>
-                    <AtmCheck />
-                  </Grid.Column>
-                </Grid>
-              </Container>
-            </Menu.Item>
-          </Sidebar>
+          <LeftSidebar />
           <Sidebar.Pusher>
             <Segment basic style={{ padding: 0, margin: 0 }}>
               <Map />
