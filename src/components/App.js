@@ -8,7 +8,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: false }) // simulates loading of data
+    this.setState({ loading: false })
   }
 
   render() {

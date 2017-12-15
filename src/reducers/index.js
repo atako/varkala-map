@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { handleActions, handleAction } from 'redux-actions'
-import { set, reduce} from 'lodash'
+import { handleActions } from 'redux-actions'
+import { set, reduce, find } from 'lodash'
 import * as actions from '../actions'
 
 const ui = handleActions({
@@ -8,8 +8,11 @@ const ui = handleActions({
     return { ...state, showFilter: !showFilter.showFilter}
   },
   [actions.showPortal](state, { payload: showPortal }) {
-    return { ...state, showPortal: !showPortal.showPortal }
-  }, 
+    return { ...state, showPortal: true }
+  },
+  [actions.closePortal](state, { payload: showPortal}) {
+    return { ...state, showPortal: false }
+  } 
 }, { showFilter: true, showPortal: false })
 
 const objects = handleActions({
@@ -22,15 +25,22 @@ const objects = handleActions({
       return result
     }, [])
     return result
+  },
+  [actions.showInfoWindow](state, { payload: id}) {
+    const result = reduce(state, (result, value, key) => {
+      value.id === id.id ? result.push(set(value, 'infoWindow', !value.infoWindow)) : result.push(value)
+      return result
+    }, [])
+    return result
   }
 },
  [
-    { lat: 8.737457, lng: 76.708158, color: '#A6419C', category: 'supermarkets', visible: true },
-    { lat: 8.751191, lng: 76.701988, color: '#A6419C', category: 'supermarkets', visible: true },
-    { lat: 8.736603, lng: 76.724954, color: '#A6419C', category: 'supermarkets', visible: true },
-    { lat: 8.735684, lng: 76.703193, color: '#FED332', category: 'beaches', visible: true },
-    { lat: 8.732667, lng: 76.706101, color: '#FED332', category: 'beaches', visible: true },
-    { lat: 8.744381, lng: 76.697722, color: '#FED332', category: 'beaches', visible: true },
+    { id: 1, lat: 8.737457, lng: 76.708158, color: '#A6419C', category: 'supermarkets', title: 'Krishna market', visible: true, infoWindow: false },
+    { id: 2, lat: 8.751191, lng: 76.701988, color: '#A6419C', category: 'supermarkets', title: 'Edava market', visible: true, infoWindow: false },
+    { id: 3, lat: 8.736603, lng: 76.724954, color: '#A6419C', category: 'supermarkets', title: 'Auditorium supermarket', visible: true, infoWindow: false },
+    { id: 4, lat: 8.735684, lng: 76.703193, color: '#FED332', category: 'beaches', title: 'Varkala beach', visible: true, infoWindow: false },
+    { id: 5, lat: 8.732667, lng: 76.706101, color: '#FED332', category: 'beaches', title: 'Papanasam beach', visible: true, infoWindow: false },
+    { id: 6, lat: 8.744381, lng: 76.697722, color: '#FED332', category: 'beaches', title: 'Black beach', visible: true, infoWindow: false },
    ])
 
 const appState = handleActions({
@@ -39,6 +49,16 @@ const appState = handleActions({
   }
 }, { supermarkets: true, beaches: true, atm: false })
 
+const portal = handleActions({
+  [actions.fetchInfoSuccess](state, { payload }) {
+    // console.log(payload.info)
+    return payload.info
+  },
+  [actions.fetchInfoFailure](state, {payload} ) {
+    return { title: 'error', description: 'error'}
+  }
+}, {})
+
 export default combineReducers({
-  ui, objects, appState
+  ui, objects, appState, portal
 })

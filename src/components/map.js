@@ -8,16 +8,21 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps"
-import { showFilter, showPortal } from '../actions'
+import styled from 'styled-components'
+import { showFilter, showPortal, showInfoWindow, fetchInfo } from '../actions'
 const style = require('../mapstyle.json')
 
 const MyMapComponent = compose(
   withStateHandlers(() => ({
     isOpen: false,
+    size: 0.35
   }), {
       onToggleOpen: ({ isOpen }) => () => ({
         isOpen: !isOpen,
-      })
+      }),
+      changeSize: (size) => {
+        size: 1
+      }
     }),
   withProps({
     googleMapURL:
@@ -47,36 +52,48 @@ const MyMapComponent = compose(
       }}
       fullscreenControl={false}
     >
-    {props.objects.map((item, i) => 
-        <Marker
-          key={i}
-          position={{ lat: item.lat, lng: item.lng }}
-          icon={{
-            path: google.maps.SymbolPath.CIRCLE,
-            fillColor: item.color,
-            scale: 4,
-            strokeColor: item.color,
-            strokeWeight: 8
-          }}
-          onClick={props.togglePortal}
-          visible={item.visible}
-        >
-        {/* {props.isOpen &&
-          <InfoWindow onCloseClick={props.onToggleOpen}>
-            <div>Krishna market</div>
-          </InfoWindow>} */}
+    {props.objects.map((item, i) =>
+      <Marker
+        key={i}
+        position={{ lat: item.lat, lng: item.lng }}
+        icon={{
+          path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
+          fillColor: item.color,
+          fillOpacity: 1,
+          strokeColor: '#222222',
+          // anchor: new google.maps.Point(0, 0),
+          strokeWeight: item.infoWindow ? 1.7 : 2,
+          scale: item.infoWindow ? 0.4 : 0.3
+        }}
+        // onMouseOver={props.onToggleOpen}
+        // onMouseOut={props.onToggleOpen}
+        onMouseOver={() => props.toggleInfoWindow(item.id)}
+        onMouseOut={() => props.toggleInfoWindow(item.id)}
+        onClick={() => props.fetchInfo(item.id)}
+        visible={item.visible}
+      >
+      { item.infoWindow ? <InfoWindow onCloseClick={props.onToggleOpen}>
+          <div>{item.title}</div>
+        </InfoWindow> : null }
       </Marker>
+    )}
+      
     )}
     </GoogleMap>
   )
   )
 
 export default class Map extends React.Component {
-  togglePortal = () => this.props.dispatch(showPortal({ showPortal: this.props.ui.showPortal }))
+  togglePortal = (id) => this.props.showPortal({ showPortal: this.props.ui.showPortal, id: id })
+  toggleInfoWindow = (id) => this.props.showInfoWindow({ id: id })
+  fetchInfo = (id) => this.props.fetchInfo(id)
   render() {
+    // console.log(this.props)
     return <MyMapComponent
         togglePortal={this.togglePortal}
-        objects ={this.props.objects}
+        toggleInfoWindow={this.toggleInfoWindow}
+        objects = {this.props.objects}
+        fetchInfo = {this.props.fetchInfo}
      />
   }
 }

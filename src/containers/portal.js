@@ -3,7 +3,8 @@ import Component from '../components/portal'
 
 const mapStateToProps = state => {
   const props = {
-    ui: state.ui
+    ui: state.ui,
+    portal: state.portal
   }
   return props
 }

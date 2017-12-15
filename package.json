@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "google-maps-react": "^1.1.2",
     "loadash": "^1.0.0",
     "react": "^16.2.0",
@@ -14,6 +15,7 @@
     "redux": "^3.7.2",
     "redux-action": "^1.2.2",
     "redux-actions": "^2.2.1",
+    "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.77.0",
     "styled-components": "^2.2.4"
   },
