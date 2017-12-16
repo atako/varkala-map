@@ -7,7 +7,7 @@ const ui = handleActions({
   [actions.showFilter](state, { payload: showFilter }) {
     return { ...state, showFilter: !showFilter.showFilter}
   },
-  [actions.showPortal](state, { payload: showPortal }) {
+  [actions.fetchInfoRequest](state, { }) {
     return { ...state, showPortal: true }
   },
   [actions.closePortal](state, { payload: showPortal}) {
@@ -51,7 +51,6 @@ const appState = handleActions({
 
 const portal = handleActions({
   [actions.fetchInfoSuccess](state, { payload }) {
-    // console.log(payload.info)
     return payload.info
   },
   [actions.fetchInfoFailure](state, {payload} ) {
@@ -59,6 +58,22 @@ const portal = handleActions({
   }
 }, {})
 
+const portalState = handleActions({
+  [actions.fetchInfoRequest]() {
+    return 'requested'
+  },
+  [actions.fetchInfoFailure]() {
+    return 'failed'
+  },
+  [actions.fetchInfoSuccess]() {
+    return 'successed'
+  }
+}, 'none')
+
 export default combineReducers({
-  ui, objects, appState, portal
+  ui,
+  objects,
+  appState,
+  portal,
+  portalState
 })

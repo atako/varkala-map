@@ -4,7 +4,8 @@ import Component from '../components/portal'
 const mapStateToProps = state => {
   const props = {
     ui: state.ui,
-    portal: state.portal
+    portal: state.portal,
+    portalState: state.portalState
   }
   return props
 }
