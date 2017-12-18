@@ -3,7 +3,7 @@ import Map from '../containers/map'
 import Portal from '../containers/portal'
 import LeftSidebar from '../containers/leftSidebar'
 import { showFilter, showPortal } from '../actions'
-import { Menu, Icon, Sidebar, Segment, Container, Grid, Checkbox } from 'semantic-ui-react'
+import { Menu, Icon, Sidebar, Segment, Grid, Checkbox } from 'semantic-ui-react'
 
 export default class Interface extends React.Component {
 
@@ -13,6 +13,7 @@ export default class Interface extends React.Component {
   render() {
     return (
       <div>
+        {/* <Sidebar as={Menu} animation='push' direction='top' visible inverted style={{ background: '#37394D' }} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0}} > */}
         <Menu inverted icon='labeled' attached='top' style={{
           background: '#37394D', borderBottom: '#191a23', borderRadius: '0', borderTop: '0'
         }}>
@@ -42,27 +43,17 @@ export default class Interface extends React.Component {
             <Icon name='plane' />
             Tickets
           </Menu.Item>
-          <Menu.Item>
-            <Checkbox toggle checked={this.props.ui.showPortal} onClick={this.togglePortal} />
-          </Menu.Item>
-          <Menu.Menu position='right'>
-            <div className='ui right aligned category search item'>
-              <div className='ui transparent icon input'>
-                <input className='prompt' type='text' placeholder='Search animals...' />
-                <i className='search link icon' />
-              </div>
-              <div className='results' />
-            </div>
-          </Menu.Menu>
         </Menu>
+        {/* </Sidebar> */}
         <Sidebar.Pushable as={Segment} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0, }}>
           <LeftSidebar />
           <Sidebar.Pusher>
-            <Segment basic style={{ padding: 0, margin: 0 }}>
+            {/* <Segment basic style={{ padding: 0, margin: 0 }}> */}
               <Map />
-            </Segment>
+            {/* </Segment> */}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
+        {/* <Sidebar as={Menu} animation='push' direction='bottom' visible inverted style={{ background: '#37394D' }}/> */}
         <Portal/>
       </div>
     )

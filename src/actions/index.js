@@ -26,3 +26,22 @@ export const fetchInfo = (id) => async (dispatch) => {
     dispatch(fetchInfoFailure());
   }
 }
+
+export const fetchPointsRequest = createAction('POINTS_FETCH_REQUEST')
+export const fetchPointsSuccess = createAction('POINTS_FETCH_SUCCESS')
+export const fetchPointsFailure = createAction('POINTS_FETCH_FAILURE')
+
+export const fetchPoints = (id) => async (dispatch) => {
+  dispatch(fetchPointsRequest());
+  try {
+    const url = `https://varkala-map-1512622053521.firebaseio.com/points.json`
+    const response = await axios.get(url)
+    if (response.data === null) {
+      dispatch(fetchInfoFailure())
+    } else {
+      dispatch(fetchPointsSuccess({ info: response.data }));
+    }
+  } catch (e) {
+    dispatch(fetchPointsFailure());
+  }
+}

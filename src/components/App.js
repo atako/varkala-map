@@ -1,6 +1,6 @@
 import React from "react";
 import Interface from '../containers/interface'
-import Map from '../containers/map'
+// import Map from '../containers/map'
 
 class App extends React.Component {
   state = {
@@ -17,7 +17,7 @@ class App extends React.Component {
     if (loading) { 
       return null
     }
-    
+
     return <div>
         <Interface />
       </div>

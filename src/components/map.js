@@ -8,28 +8,26 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps"
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import { showFilter, showPortal, showInfoWindow, fetchInfo } from '../actions'
+import './map.css'
 const style = require('../mapstyle.json')
 
 const MyMapComponent = compose(
-  withStateHandlers(() => ({
-    isOpen: false,
-    size: 0.35
-  }), {
-      onToggleOpen: ({ isOpen }) => () => ({
-        isOpen: !isOpen,
-      }),
-      changeSize: (size) => {
-        size: 1
-      }
-    }),
+  // withStateHandlers(() => ({
+  //   isOpen: false,
+  //   size: 0.35
+  // })),
   withProps({
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?AIzaSyBBNTji--JP2BD3lbsA8aLUIRRklOCunQA&v=3.exp&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `600px` }} />,
-    mapElement: <div style={{ height: `100%` }} />
+    loadingElement: <div style={{ height: `100vh` }} />,
+    containerElement: <div style={{
+      height: '100vh'
+    }} /> ,
+    mapElement: <div style={{
+      height: '100vh'
+    }} />
   }),
   withScriptjs,
   withGoogleMap
@@ -46,7 +44,7 @@ const MyMapComponent = compose(
           position: google.maps.ControlPosition.TOP_CENTER
         },
         zoomControlOptions: {
-          position: google.maps.ControlPosition.RIGHT_BOTTOM
+          position: google.maps.ControlPosition.RIGHT_TOP
         },
         fullscreenControl: false
       }}
@@ -56,15 +54,17 @@ const MyMapComponent = compose(
       <Marker
         key={i}
         position={{ lat: item.lat, lng: item.lng }}
-        icon={{
-          path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
-          fillColor: item.color,
-          fillOpacity: 1,
-          strokeColor: '#222222',
-          // anchor: new google.maps.Point(0, 0),
-          strokeWeight: item.infoWindow ? 1.7 : 2,
-          scale: item.infoWindow ? 0.4 : 0.3
-        }}
+        icon={'/icons/shoppingbag_pinlet-2-medium.png'
+          // path: "M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z",
+          // fillColor: '#4f98f0',
+          // fillOpacity: 1,
+          // strokeColor: '#333333',
+          // // anchor: new google.maps.Point(0, 0),
+          // strokeWeight: item.infoWindow ? 1 : 0,
+          // scale: item.infoWindow ? 0.5 : 0.5,
+          // label: 'a'
+        }
+        
         // onMouseOver={props.onToggleOpen}
         // onMouseOut={props.onToggleOpen}
         onMouseOver={() => props.toggleInfoWindow(item.id)}

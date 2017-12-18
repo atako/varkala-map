@@ -1,9 +1,9 @@
 import React from 'react'
-import { Menu, Icon, Sidebar, Segment, Container, Grid, Checkbox } from 'semantic-ui-react'
+import { Menu, Icon, Sidebar, Container, Grid } from 'semantic-ui-react'
 import BeachCheck from '../containers/checkboxes/beach'
 import AtmCheck from './checkboxes/atm'
 import SuperCheck from '../containers/checkboxes/supermarket'
-import { showFilter, showPortal } from '../actions'
+import { showFilter } from '../actions'
 import styled from 'styled-components'
 
 const FilterItem = styled.div`
@@ -21,8 +21,8 @@ export default class leftSidebar extends React.Component {
   render() {
         return <Sidebar as={Menu} animation='overlay' width='wide' visible={this.props.ui.showFilter} icon='labeled' vertical style={{ background: '#354051', width: '280px', paddingTop: '30px', borderLeft: '0px' }} >
           <FilterItem active={this.props.appState.supermarkets} color='#A4459A' activeBackground='#60405d'>
-            <Container>
-              <Grid>
+            <Container >
+              <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                     <Icon inverted name='shop' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
@@ -37,7 +37,7 @@ export default class leftSidebar extends React.Component {
           </FilterItem>
           <FilterItem active={this.props.appState.beaches} color='#FDD245' activeBackground='#59460e'>
             <Container>
-              <Grid>
+              <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                     <Icon inverted name='umbrella' size='big' style={{ marginTop: '-3px', color: '#A0ABBE' }} />
@@ -52,7 +52,7 @@ export default class leftSidebar extends React.Component {
           </FilterItem>
               <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
                 <Container>
-                  <Grid>
+              <Grid style={{ marginRight: '0px' }}>
                     <Grid.Column width={12}>
                       <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                         <Icon inverted name='money' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
