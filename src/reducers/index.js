@@ -17,7 +17,6 @@ const ui = handleActions({
 
 const objects = handleActions({
   [actions.fetchPointsSuccess](state, { payload: info }) {
-    console.log(info)
     return info.info
   },
   [actions.fetchPointsFailure](state) {

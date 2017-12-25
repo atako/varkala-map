@@ -20,6 +20,7 @@ export const fetchInfo = (id) => async (dispatch) => {
     if (response.data === null) {
       dispatch(fetchInfoFailure())
     } else {
+      console.log(response.data)
       dispatch(fetchInfoSuccess({ info: response.data }));
     }
   } catch (e) {
@@ -39,7 +40,7 @@ export const fetchPoints = (id) => async (dispatch) => {
     if (response.data === null) {
       dispatch(fetchInfoFailure())
     } else {
-      dispatch(fetchPointsSuccess({ info: response.data }));
+      dispatch(fetchPointsSuccess({ info: Object.values(response.data) }));
     }
   } catch (e) {
     dispatch(fetchPointsFailure());

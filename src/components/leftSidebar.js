@@ -20,8 +20,9 @@ export default class leftSidebar extends React.Component {
   toggleVisibility = () => this.props.dispatch(showFilter({ showFilter: this.props.ui.showFilter }))
   render() {
         return <Sidebar as={Menu} animation='overlay' width='wide' visible={this.props.ui.showFilter} icon='labeled' vertical style={{ background: '#354051', width: '280px', paddingTop: '30px', borderLeft: '0px' }} >
+        <div style={{top: '30px', right: '-24px', position: 'absolute', zIndex: '999'}}>i</div>
           <FilterItem active={this.props.appState.supermarkets} color='#A4459A' activeBackground='#60405d'>
-            <Container >
+            <Container>
               <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>

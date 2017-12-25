@@ -21,7 +21,7 @@ export default class Interface extends React.Component {
             <Icon name='content' size='huge' />
           </Menu.Item>
           <Menu.Item style={{ width: '197px', fontFamily: 'Arvo', fontSize: '20px', marginTop: '10px' }}>
-            Varkala.Online
+            <img src='/images/logo.png' />
           </Menu.Item>
           <Menu.Item active={true} name='Map' color='olive' style={{ boxShadow: 'inset 0 0 2px #222222' }}>
             <Icon name='map outline' />
