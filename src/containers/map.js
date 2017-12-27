@@ -5,7 +5,8 @@ import * as actionCreators from '../actions'
 const mapStateToProps = state => {
   const props = {
     ui: state.ui,
-    objects: state.objects
+    objects: state.objects,
+    activeIcon: state.activeIcon
   }
   return props
 }

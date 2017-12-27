@@ -73,11 +73,21 @@ const currentPoint = handleActions({
   }
 }, {})
 
+const activeIcon = handleActions({
+  [actions.fetchInfoLocal](state, {payload}) {
+    return payload.id
+  },
+  [actions.closePortal](state, {}) {
+    return null
+  }
+}, null)
+
 export default combineReducers({
   ui,
   objects,
   appState,
   portal,
   portalState,
-  currentPoint
+  currentPoint,
+  activeIcon
 })

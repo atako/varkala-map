@@ -54,19 +54,20 @@ const MyMapComponent = compose(
       <Marker
         key={i}
         position={{ lat: item.lat, lng: item.lng }}
-        icon={`/icons/${item.category}.png`
-        }
+        icon={ props.activeIcon === item.id ? null : `/icons/${item.category}.png`}
         onMouseOver={() => props.toggleInfoWindow(item.id)}
         onMouseOut={() => props.toggleInfoWindow(item.id)}
         onClick={() => props.fetchInfo(item)}
         visible={item.visible}
       >
-      { item.infoWindow ? <InfoWindow>
+        {item.infoWindow ? <InfoWindow>
           <div>{item.title}</div>
         </InfoWindow> : null }
+        {props.activeIcon === item.id ? <InfoWindow>
+          <div>{item.title}</div>
+        </InfoWindow> : null}
       </Marker>
     )}
-      
     )}
     </GoogleMap>
   )
@@ -77,12 +78,12 @@ export default class Map extends React.Component {
   toggleInfoWindow = (id) => this.props.showInfoWindow({ id: id })
   fetchInfo = (id) => this.props.fetchInfo(id)
   render() {
-    // console.log(this.props)
     return <MyMapComponent
         togglePortal={this.togglePortal}
         toggleInfoWindow={this.toggleInfoWindow}
         objects = {this.props.objects}
         fetchInfo = {this.props.fetchInfo}
+        activeIcon = {this.props.activeIcon}
      />
   }
 }

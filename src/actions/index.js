@@ -48,3 +48,5 @@ export const fetchPoints = (id) => async (dispatch) => {
     dispatch(fetchPointsFailure());
   }
 }
+
+export const setActivePoint = createAction('POINT_SET_ACTIVE')
