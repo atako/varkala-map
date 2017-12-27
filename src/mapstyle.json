@@ -34,10 +34,24 @@
   },
   {
     "featureType": "road",
+    "stylers": [
+      {
+        "saturation": -65
+      },
+      {
+        "lightness": 5
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
     "elementType": "labels",
     "stylers": [
       {
-        "visibility": "off"
+        "visibility": "on"
       }
     ]
   },
@@ -60,7 +74,6 @@
   },
   {
     "featureType": "water",
-    "elementType": "all",
     "stylers": [
       {
         "color": "#46bcec"

@@ -11,16 +11,18 @@ export const showInfoWindow = createAction('INFOWINDOW_SHOW')
 export const fetchInfoRequest = createAction('INFO_FETCH_REQUEST')
 export const fetchInfoSuccess = createAction('INFO_FETCH_SUCCESS')
 export const fetchInfoFailure = createAction('INFO_FETCH_FAILURE')
+export const fetchInfoLocal = createAction('INFO_FETCH_LOCAL')
 
-export const fetchInfo = (id) => async (dispatch) => {
+export const fetchInfo = (item) => async (dispatch) => {
+  dispatch(fetchInfoLocal(item))
   dispatch(fetchInfoRequest());
   try {
-    const url = `https://varkala-map-1512622053521.firebaseio.com/objects/${id}.json`
+    const url = `https://varkala-map-1512622053521.firebaseio.com/objects/${item.id}.json`
     const response = await axios.get(url)
     if (response.data === null) {
       dispatch(fetchInfoFailure())
     } else {
-      console.log(response.data)
+      // console.log(response.data)
       dispatch(fetchInfoSuccess({ info: response.data }));
     }
   } catch (e) {

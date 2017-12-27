@@ -54,25 +54,14 @@ const MyMapComponent = compose(
       <Marker
         key={i}
         position={{ lat: item.lat, lng: item.lng }}
-        icon={'/icons/shoppingbag_pinlet-2-medium.png'
-          // path: "M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z",
-          // fillColor: '#4f98f0',
-          // fillOpacity: 1,
-          // strokeColor: '#333333',
-          // // anchor: new google.maps.Point(0, 0),
-          // strokeWeight: item.infoWindow ? 1 : 0,
-          // scale: item.infoWindow ? 0.5 : 0.5,
-          // label: 'a'
+        icon={`/icons/${item.category}.png`
         }
-        
-        // onMouseOver={props.onToggleOpen}
-        // onMouseOut={props.onToggleOpen}
         onMouseOver={() => props.toggleInfoWindow(item.id)}
         onMouseOut={() => props.toggleInfoWindow(item.id)}
-        onClick={() => props.fetchInfo(item.id)}
+        onClick={() => props.fetchInfo(item)}
         visible={item.visible}
       >
-      { item.infoWindow ? <InfoWindow onCloseClick={props.onToggleOpen}>
+      { item.infoWindow ? <InfoWindow>
           <div>{item.title}</div>
         </InfoWindow> : null }
       </Marker>

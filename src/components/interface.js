@@ -3,7 +3,7 @@ import Map from '../containers/map'
 import Portal from '../containers/portal'
 import LeftSidebar from '../containers/leftSidebar'
 import { showFilter, showPortal } from '../actions'
-import { Menu, Icon, Sidebar, Segment, Grid, Checkbox } from 'semantic-ui-react'
+import { Menu, Icon, Sidebar, Segment } from 'semantic-ui-react'
 
 export default class Interface extends React.Component {
 

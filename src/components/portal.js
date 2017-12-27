@@ -12,21 +12,21 @@ export default class extends React.Component {
           >
       <Segment 
         style={{  position: 'absolute',
-                  width: '270px',
-                  minHeight: '200px',
+                  width: '280px',
+                  maxHeight: '80%',
                   top: '150px',
                   right: '5px',
-                  overflow: 'hidden',
                   padding: '0',
                   boxShadow: '-3px 10px 69px 0px rgba(68,68,68,0.63)',
-                  border: 'solid white 0px'
+                  border: 'solid white 0px',
+                  
               }}>
         <div style={{
           position: 'relative',
-          height: '150px',
+          height: '160px',
           display: 'flex',
-          background: 'url(./images/black_beach.jpg)',
-          backgroundSize: 'cover'
+          backgroundImage: `url(${this.props.currentPoint.img})`,
+          backgroundSize: 'cover',
         }} />
         <a href='#' onClick={this.closePortal}>
         <span>
@@ -38,7 +38,7 @@ export default class extends React.Component {
               right: '7px',
               cursor: 'pointer'
              }} > 
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#fff" d="M12 10.586L8.707 7.293a1 1 0 0 0-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 0 0 1.414 1.414L12 13.414l3.293 3.293a1 1 0 0 0 1.414-1.414L13.414 12l3.293-3.293a1 1 0 1 0-1.414-1.414L12 10.586z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path stroke="#555555" stroke-width="1" fill-width="4" stroke-opacity="0.5" fill="#fff" d="M12 10.586L8.707 7.293a1 1 0 0 0-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 0 0 1.414 1.414L12 13.414l3.293 3.293a1 1 0 0 0 1.414-1.414L13.414 12l3.293-3.293a1 1 0 1 0-1.414-1.414L12 10.586z"></path></svg>
              </div>
           </span>
         </a>
@@ -50,7 +50,11 @@ export default class extends React.Component {
           paddingBottom: '2em',
           color: '#333333', 
           fontFamily: 'Open Sans', 
-          backgroundColor: '#ffffff'}}
+          backgroundColor: '#ffffff',
+          overflow: 'auto',
+          maxHeight: '400px',
+          position: 'relative',
+        }}
         >
           <div style={{
             fontFamily: 'Open Sans',
@@ -59,7 +63,7 @@ export default class extends React.Component {
             marginTop: '20px',
             marginBottom: '10px',
             color: '#333333'
-          }}>{this.props.portal.title}</div>
+          }}>{this.props.currentPoint.title}</div>
             <div style={{
               fontFamily: 'Open Sans',
               fontSize: '20px',
@@ -67,7 +71,7 @@ export default class extends React.Component {
               marginTop: '5px',
               marginBottom: '17px',
               color: '#555555'
-            }}>{this.props.portal.en_title}</div>
+            }}>{this.props.currentPoint.en_title}</div>
           <div style={{
               fontFamily: 'Open Sans',
               fontSize: '15px',

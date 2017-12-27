@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { handleActions } from 'redux-actions'
+import { handleActions, handleAction } from 'redux-actions'
 import { set, reduce } from 'lodash'
 import * as actions from '../actions'
 
@@ -67,10 +67,17 @@ const portalState = handleActions({
   }
 }, 'none')
 
+const currentPoint = handleActions({
+  [actions.fetchInfoLocal] (state, {payload}) {
+    return payload
+  }
+}, {})
+
 export default combineReducers({
   ui,
   objects,
   appState,
   portal,
-  portalState
+  portalState,
+  currentPoint
 })
