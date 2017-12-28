@@ -34,11 +34,15 @@ export default class extends React.Component {
             // corner={true} 
             style={{ 
               position: 'absolute',
-              top: '6px',
-              right: '7px',
-              cursor: 'pointer'
+              top: '0px',
+              right: '0px',
+              cursor: 'pointer',
+              width: '20px',
+              height: '20px',
+              backgroundColor: '#555',
+              opacity: '0.7'
              }} > 
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path stroke="#555555" stroke-width="1" fill-width="4" stroke-opacity="0.5" fill="#fff" d="M12 10.586L8.707 7.293a1 1 0 0 0-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 0 0 1.414 1.414L12 13.414l3.293 3.293a1 1 0 0 0 1.414-1.414L13.414 12l3.293-3.293a1 1 0 1 0-1.414-1.414L12 10.586z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28"><path  fill-width="5" fill="#fff" d="M12 10.586L8.707 7.293a1 1 0 0 0-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 0 0 1.414 1.414L12 13.414l3.293 3.293a1 1 0 0 0 1.414-1.414L13.414 12l3.293-3.293a1 1 0 1 0-1.414-1.414L12 10.586z"></path></svg>
              </div>
           </span>
         </a>
