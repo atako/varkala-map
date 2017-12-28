@@ -30,9 +30,16 @@ const objects = handleActions({
     }, [])
     return result
   },
-  [actions.showInfoWindow](state, { payload: id}) {
+  [actions.showInfoWindow](state, { payload }) {
     const result = reduce(state, (result, value, key) => {
-      value.id === id.id ? result.push(set(value, 'infoWindow', !value.infoWindow)) : result.push(value)
+      value.id === payload.id ? result.push(set(value, 'infoWindow', payload.state)) : result.push(value)
+      return result
+    }, [])
+    return result
+  },
+  [actions.closePortal](state, {}) {
+    const result = reduce(state, (result, value, key) => {
+      value.infoWindow === true ? result.push(set(value, 'infoWindow', false)) : result.push(value)
       return result
     }, [])
     return result

@@ -56,8 +56,8 @@ const MyMapComponent = compose(
         key={i}
         position={{ lat: item.lat, lng: item.lng }}
         icon={props.activeIcon === item.id ? `/icons/${item.category}_active.png` : `/icons/${item.category}.png`}
-        onMouseOver={props.activeIcon === item.id ? null: () => props.toggleInfoWindow(item.id)}
-        onMouseOut={props.activeIcon === item.id ? null : () => props.toggleInfoWindow(item.id)}
+        onMouseOver={props.activeIcon === item.id ? null: () => props.toggleInfoWindow(item.id, true)}
+        onMouseOut={props.activeIcon === item.id ? null : () => props.toggleInfoWindow(item.id, false)}
         onClick={() => props.fetchInfo(item)}
         visible={item.visible}
       >
@@ -99,16 +99,6 @@ const MyMapComponent = compose(
             </div>
           </div>
         </InfoBox>
-        // <InfoWindow>
-        //   <div style={{ backgroundColor: `white`, opacity: 0.75, padding: `-3px` }}>
-        //     <div style={{
-        //       fontFamily: 'Open Sans',
-        //       fontSize: '14px',
-        //       fontWeight: '600', }}>
-        //       {item.title}
-        //     </div>
-        //   </div>
-        // </InfoWindow>
          : null }
         {props.activeIcon === item.id ? <InfoBox
           defaultPosition={new google.maps.LatLng(item.lat, item.lng)}
@@ -117,7 +107,6 @@ const MyMapComponent = compose(
             enableEventPropagation: true,
             pixelOffset: new google.maps.Size(8, -59),
             boxStyle: {
-              // padding: "0px 0px 0px 0px",
               maxWidth: "250px",
               textAlign: "center",
               whiteSpace: 'nowrap',
@@ -158,7 +147,7 @@ const MyMapComponent = compose(
 
 export default class Map extends React.Component {
   togglePortal = (id) => this.props.showPortal({ showPortal: this.props.ui.showPortal, id: id })
-  toggleInfoWindow = (id) => this.props.showInfoWindow({ id: id })
+  toggleInfoWindow = (id, state) => this.props.showInfoWindow({ id: id, state: state })
   fetchInfo = (id) => this.props.fetchInfo(id)
   render() {
     return <MyMapComponent
