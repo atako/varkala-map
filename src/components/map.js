@@ -22,12 +22,18 @@ const MyMapComponent = compose(
   withProps({
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?AIzaSyBBNTji--JP2BD3lbsA8aLUIRRklOCunQA&v=3.exp&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100vh` }} />,
+    loadingElement: <div style={{
+      // height: '500px',
+       }} />,
     containerElement: <div style={{
-      height: '100vh'
+      height: '100%',
+      width: '100%',
+      // position: 'absolute'
     }} /> ,
     mapElement: <div style={{
-      height: '100vh'
+      height: '100%',
+      width: '100%',
+      // position: 'absolute'
     }} />
   }),
   withScriptjs,
@@ -140,7 +146,7 @@ const MyMapComponent = compose(
         </InfoBox> : null}
       </Marker>
     )}
-    )}
+    
     </GoogleMap>
   )
   )
@@ -150,12 +156,20 @@ export default class Map extends React.Component {
   toggleInfoWindow = (id, state) => this.props.showInfoWindow({ id: id, state: state })
   fetchInfo = (id) => this.props.fetchInfo(id)
   render() {
-    return <MyMapComponent
+    return <div className='hi' style={{
+      height: '100%',
+      width: '100%',
+      // backgroundColor: 'red',
+      position: 'fixed'
+      // position: 'absolute'
+    }}>
+      <MyMapComponent
         togglePortal={this.togglePortal}
         toggleInfoWindow={this.toggleInfoWindow}
         objects = {this.props.objects}
         fetchInfo = {this.props.fetchInfo}
         activeIcon = {this.props.activeIcon}
      />
+     </div>
   }
 }

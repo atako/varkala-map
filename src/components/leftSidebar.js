@@ -27,7 +27,7 @@ export default class leftSidebar extends React.Component {
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                     <Icon inverted name='shop' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                    Супермаркеты
+                    Магазины
                   </div>
                 </Grid.Column>
                 <Grid.Column width={2}>
@@ -66,6 +66,6 @@ export default class leftSidebar extends React.Component {
               </Grid>
             </Container>
           </FilterItem>
-            </Sidebar>
+          </Sidebar>
   }
 } 

@@ -15,7 +15,7 @@ export default class Interface extends React.Component {
       <div>
         {/* <Sidebar as={Menu} animation='push' direction='top' visible inverted style={{ background: '#37394D' }} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0}} > */}
         <Menu inverted icon='labeled' attached='top' style={{
-          background: '#37394D', borderBottom: '#191a23', borderRadius: '0', borderTop: '0'
+          background: '#37394D', borderBottom: '#191a23', borderRadius: '0', borderTop: '0',
         }}>
           <Menu.Item onClick={this.toggleVisibility} name='show' active={this.props.ui.showFilter} style={{ paddingTop: '25px' }}>
             <Icon name='content' size='huge' />
@@ -25,9 +25,9 @@ export default class Interface extends React.Component {
           </Menu.Item>
           <Menu.Item active={true} name='Map' color='olive' style={{ boxShadow: 'inset 0 0 2px #222222' }}>
             <Icon name='map outline' />
-            Map
+            Карта
           </Menu.Item>
-          <Menu.Item>
+          {/* <Menu.Item>
             <Icon name='hotel' />
             Hotels
           </Menu.Item>
@@ -42,18 +42,15 @@ export default class Interface extends React.Component {
           <Menu.Item>
             <Icon name='plane' />
             Tickets
-          </Menu.Item>
-        </Menu>
+          </Menu.Item> */}
+        </Menu> 
         {/* </Sidebar> */}
-        <Sidebar.Pushable as={Segment} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0, }}>
+       <Sidebar.Pushable as={Segment} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0, height: '100%', width: '100%', position: 'fixed' }}>
           <LeftSidebar />
           <Sidebar.Pusher>
-            {/* <Segment basic style={{ padding: 0, margin: 0 }}> */}
               <Map />
-            {/* </Segment> */}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
-        {/* <Sidebar as={Menu} animation='push' direction='bottom' visible inverted style={{ background: '#37394D' }}/> */}
         <Portal/>
       </div>
     )
