@@ -43,6 +43,13 @@ const objects = handleActions({
       return result
     }, [])
     return result
+  },
+  [actions.fetchInfoLocal](state, {}) {
+    const result = reduce(state, (result, value, key) => {
+      value.infoWindow === true ? result.push(set(value, 'infoWindow', false)) : result.push(value)
+      return result
+    }, [])
+    return result
   }
 },
  [])

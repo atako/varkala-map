@@ -20,8 +20,8 @@ export default class Interface extends React.Component {
           <Menu.Item onClick={this.toggleVisibility} name='show' active={this.props.ui.showFilter} style={{ paddingTop: '25px' }}>
             <Icon name='content' size='huge' />
           </Menu.Item>
-          <Menu.Item style={{ width: '197px', fontFamily: 'Arvo', fontSize: '20px', marginTop: '10px' }}>
-            <img src='/images/logo.png' />
+          <Menu.Item style={{ width: '197px', fontFamily: 'Arvo', fontSize: '20px', marginTop: '13px' , padding: '0px'}}>
+            <img src='/images/logo.png' style={{width: '130px'}} />
           </Menu.Item>
           <Menu.Item active={true} name='Map' color='olive' style={{ boxShadow: 'inset 0 0 2px #222222' }}>
             <Icon name='map outline' />

@@ -27,7 +27,7 @@ export default class leftSidebar extends React.Component {
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                     <Icon inverted name='shop' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                    Supermarkets
+                    Супермаркеты
                   </div>
                 </Grid.Column>
                 <Grid.Column width={2}>
@@ -42,7 +42,7 @@ export default class leftSidebar extends React.Component {
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                     <Icon inverted name='umbrella' size='big' style={{ marginTop: '-3px', color: '#A0ABBE' }} />
-                    Beaches
+                    Пляжи
                       </div>
                 </Grid.Column>
                 <Grid.Column width={2} >
@@ -51,21 +51,21 @@ export default class leftSidebar extends React.Component {
               </Grid>
             </Container>
           </FilterItem>
-              <Menu.Item name='updates' style={{ textAlign: 'left', paddingTop: '8px', paddingBottom: '8px' }}>
-                <Container>
+          <FilterItem active={this.props.appState.atm} color='#FDD245' activeBackground='#59460e'>
+            <Container>
               <Grid style={{ marginRight: '0px' }}>
-                    <Grid.Column width={12}>
-                      <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
-                        <Icon inverted name='money' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                        ATM
+                <Grid.Column width={12}>
+                  <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
+                    <Icon inverted name='photo' size='big' style={{ marginTop: '-3px', color: '#A0ABBE' }} />
+                    Посмотреть
                       </div>
-                    </Grid.Column>
-                    <Grid.Column widht={2}>
-                      <AtmCheck />
-                    </Grid.Column>
-                  </Grid>
-                </Container>
-              </Menu.Item>
+                </Grid.Column>
+                <Grid.Column width={2} >
+                  <AtmCheck onClick={this.toggleVisibility} />
+                </Grid.Column>
+              </Grid>
+            </Container>
+          </FilterItem>
             </Sidebar>
   }
 } 
