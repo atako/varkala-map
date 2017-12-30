@@ -15,7 +15,7 @@ export default class extends React.Component {
                   width: '280px',
                   maxHeight: '80%',
                   top: '150px',
-                  right: '5px',
+                  right: '10px',
                   padding: '0',
                   boxShadow: '-3px 10px 69px 0px rgba(68,68,68,0.63)',
                   border: 'solid white 0px',
@@ -85,7 +85,7 @@ export default class extends React.Component {
               color: '#333333',
               lineHeight: '1.4em'
           }}>{this.props.portal.description}</div>
-          <Button color='green'>Подробнее</Button>
+          {/* <Button color='green'>Подробнее</Button> */}
         </div>}
         
       </Segment>

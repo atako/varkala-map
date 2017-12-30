@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "loadash": "^1.0.0",
     "loaders.css": "^0.1.2",
+    "mobile-detect": "^1.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.3",
