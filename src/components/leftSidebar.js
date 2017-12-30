@@ -21,7 +21,7 @@ export default class leftSidebar extends React.Component {
   render() {
         return <Sidebar as={Menu} animation='overlay' width='wide' visible={this.props.ui.showFilter} icon='labeled' vertical style={{ background: '#354051', width: '280px', paddingTop: '30px', borderLeft: '0px' }} >
         <div style={{top: '30px', right: '-24px', position: 'absolute', zIndex: '999'}}>i</div>
-          <FilterItem active={this.props.appState.supermarkets} color='#A4459A' activeBackground='#60405d'>
+          <FilterItem active={this.props.appState.supermarkets} color='#88a83e' activeBackground='#4D5B15'>
             <Container>
               <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
@@ -36,12 +36,12 @@ export default class leftSidebar extends React.Component {
               </Grid>
             </Container>
           </FilterItem>
-          <FilterItem active={this.props.appState.beaches} color='#FDD245' activeBackground='#59460e'>
+          <FilterItem active={this.props.appState.beaches} color='#911146' activeBackground='#510A2A'>
             <Container>
               <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
-                    <Icon inverted name='umbrella' size='big' style={{ marginTop: '-3px', color: '#A0ABBE' }} />
+                    <Icon inverted name='umbrella' size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
                     Пляжи
                       </div>
                 </Grid.Column>
@@ -51,7 +51,7 @@ export default class leftSidebar extends React.Component {
               </Grid>
             </Container>
           </FilterItem>
-          <FilterItem active={this.props.appState.atm} color='#FDD245' activeBackground='#59460e'>
+          {/* <FilterItem active={this.props.appState.atm} color='#FDD245' activeBackground='#59460e'>
             <Container>
               <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
@@ -65,7 +65,7 @@ export default class leftSidebar extends React.Component {
                 </Grid.Column>
               </Grid>
             </Container>
-          </FilterItem>
+          </FilterItem> */}
           </Sidebar>
   }
 } 

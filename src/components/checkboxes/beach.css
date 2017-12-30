@@ -10,11 +10,11 @@ body {
 }
 
 .label-cbx-beach input:checked+.checkbox-beach {
-  border-color: #A09D33;
+  border-color: #911146;
 }
 
 .label-cbx-beach input:checked+.checkbox-beach svg path {
-  fill: #A09D33;
+  fill: #911146;
 }
 
 .label-cbx-beach input:checked+.checkbox-beach svg polyline {
@@ -36,7 +36,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #A09D33;
+  fill: #911146;
 }
 
 .label-cbx-beach .checkbox-beach svg {
@@ -47,7 +47,7 @@ body {
 
 .label-cbx-beach .checkbox-beach svg path {
   fill: none;
-  stroke: #A09D33;
+  stroke: #911146;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;

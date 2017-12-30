@@ -10,11 +10,11 @@ body {
 }
 
 .label-cbx-super input:checked+.checkbox-super {
-  border-color: #A6419C;
+  border-color: #88a83e;
 }
 
 .label-cbx-super input:checked+.checkbox-super svg path {
-  fill: #A6419C;
+  fill: #88a83e;
 }
 
 .label-cbx-super input:checked+.checkbox-super svg polyline {
@@ -36,7 +36,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #A6419C;
+  fill: #88a83e;
 }
 
 .label-cbx-super .checkbox-super svg {
@@ -47,7 +47,7 @@ body {
 
 .label-cbx-super .checkbox-super svg path {
   fill: none;
-  stroke: #A6419C;
+  stroke: #88a83e;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;

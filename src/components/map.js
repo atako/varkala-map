@@ -21,7 +21,7 @@ const MyMapComponent = compose(
   // })),
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?AIzaSyBBNTji--JP2BD3lbsA8aLUIRRklOCunQA&v=3.exp&libraries=geometry,drawing,places",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBfi20dEtHJjcfHLt-N0E5KJctfw0oTWN0&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{
       // height: '500px',
        }} />,

@@ -5,7 +5,6 @@ import LeftSidebar from '../containers/leftSidebar'
 import { showFilter, showPortal } from '../actions'
 import { Menu, Icon, Sidebar, Segment, Grid } from 'semantic-ui-react'
 import Styled from 'styled-components'
-import MobileDetect from 'mobile-detect'
 import { componentWillUnmount, componentDidMount } from 'react-google-maps/lib/utils/MapChildHelper';
 
 const StyledLogo = Styled(Menu.Item)`
@@ -22,13 +21,11 @@ export default class Interface extends React.Component {
   componentDidMount () {
     const isMobile = window.innerWidth <= 500
     if (isMobile) {
-      console.log('hi')
       this.hideFilter()
     }
   }
   render() {
     const isMobile = window.innerWidth <= 500
-    console.log (isMobile)
     return (
       <div style={{ position: 'fixed', width: '100%'}}>
         {/* <Sidebar as={Menu} animation='push' direction='top' visible inverted style={{ background: '#37394D' }} style={{ padding: 0, margin: 0, border: 0, borderRadius: 0}} > */}
