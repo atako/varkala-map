@@ -2,6 +2,16 @@ import React from 'react'
 import {Segment, TransitionablePortal, Icon, Image, Button } from 'semantic-ui-react'
 import { showFilter, showPortal, closePortal } from '../actions'
 import Loader from './loader/loader'
+import Slider from 'react-slick'
+import './portal.css'
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+}
 
 export default class extends React.Component {
   closePortal = () => this.props.dispatch(closePortal({ showPortal: this.props.ui.showPortal }))
@@ -21,13 +31,29 @@ export default class extends React.Component {
                   border: 'solid white 0px',
                   
               }}>
-        <div style={{
+        {/* <div style={{
           position: 'relative',
           height: '160px',
           display: 'flex',
           backgroundImage: `url(${this.props.currentPoint.img})`,
           backgroundSize: 'cover',
-        }} />
+        }} /> */}
+        <Slider {...settings} style={{ zIndex: '999'}}>
+          <div style={{
+            position: 'relative',
+            height: '160px',
+            display: 'flex',
+            backgroundImage: `url(${this.props.currentPoint.img})`,
+            backgroundSize: 'cover',
+          }} />
+          <div style={{
+            position: 'relative',
+            height: '160px',
+            display: 'flex',
+            backgroundImage: `url(${this.props.currentPoint.img})`,
+            backgroundSize: 'cover',
+          }} />
+        </Slider>
         <a href='#' onClick={this.closePortal}>
         <span>
           <div 
@@ -48,7 +74,7 @@ export default class extends React.Component {
         </a>
         {this.props.portalState === 'requested' ? <Loader /> :
         <div style={{
-          paddingTop: '0.2em',
+          paddingTop: '10px',
           paddingLeft: '1em',
           paddingRight: '0.7em',
           paddingBottom: '2em',
@@ -66,7 +92,7 @@ export default class extends React.Component {
             fontWeight: '600',
             marginTop: '20px',
             marginBottom: '10px',
-            color: '#333333'
+            color: '#333333',
           }}>{this.props.currentPoint.title}</div>
             <div style={{
               fontFamily: 'Open Sans',
@@ -74,7 +100,8 @@ export default class extends React.Component {
               fontWeight: '600',
               marginTop: '5px',
               marginBottom: '17px',
-              color: '#555555'
+              color: '#555555',
+              lineHeight: '1.5'
             }}>{this.props.currentPoint.en_title}</div>
           <div style={{
               fontFamily: 'Open Sans',
