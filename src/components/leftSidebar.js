@@ -9,7 +9,7 @@ import styled from 'styled-components'
 import supermarket from '../containers/checkboxes/supermarket';
 
 const FilterItem = styled.div`
-    background: ${props => props.active ? props.activeBackground : '#364050'};
+    background: ${props => props.active ? '#222222' : '#364050'};
     text-align: left;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -33,7 +33,7 @@ const MenuItems = [{
     title: 'Sights',
     borderColor: '#194487',
     backgroundColor: '#082e68',
-    icon: 'eye',
+    icon: 'photo',
     category: 'sights'
 }]
 
@@ -46,7 +46,7 @@ export default class leftSidebar extends React.Component {
 
         <div style={{top: '30px', right: '-24px', position: 'absolute', zIndex: '999'}}></div>
         {MenuItems.map(item => {
-          return <FilterItem key={item.category} active='true' color={item.borderColor} activeBackground={item.backgroundColor}>
+          return <FilterItem key={item.category} active={false} color={item.borderColor} activeBackground={item.backgroundColor}>
             <Container>
               <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>

@@ -80,23 +80,23 @@ body {
   margin-bottom: 0;
 }
 
-.label-cbx-beaches input:checked+.checkbox {
+.label-cbx-beaches input:checked+.checkbox-beaches {
   border-color: #911146;
 }
 
-.label-cbx-beaches input:checked+.checkbox svg path {
+.label-cbx-beaches input:checked+.checkbox-beaches svg path {
   fill: #911146;
 }
 
-.label-cbx-beaches input:checked+.checkbox svg polyline {
+.label-cbx-beaches input:checked+.checkbox-beaches svg polyline {
   stroke-dashoffset: 0;
 }
 
-.label-cbx:hover .checkbox svg path {
+.label-cbx-beaches:hover .checkbox-beaches svg path {
   stroke-dashoffset: 0;
 }
 
-.label-cbx-beaches .checkbox {
+.label-cbx-beaches .checkbox-beaches {
   position: relative;
   top: 2px;
   float: left;
@@ -110,13 +110,13 @@ body {
   fill: #911146;
 }
 
-.label-cbx .checkbox svg {
+.label-cbx-beaches .checkbox-beaches svg {
   position: absolute;
   top: -2px;
   left: -2px;
 }
 
-.label-cbx-beaches .checkbox svg path {
+.label-cbx-beaches .checkbox-beaches svg path {
   fill: none;
   stroke: #911146;
   stroke-width: 2;
@@ -124,10 +124,10 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 71px;
   stroke-dashoffset: 71px;
-  transition: all 0.5s ease;
+  transition: all 0.01s ease;
 }
 
-.label-cbx-beaches .checkbox svg polyline {
+.label-cbx-beaches .checkbox-beaches svg polyline {
   fill: none;
   stroke: #FFF;
   stroke-width: 2;
@@ -135,7 +135,20 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 18px;
   stroke-dashoffset: 18px;
-  transition: all 0.5s ease;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-beaches>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-beaches {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /* -------------- */
@@ -146,23 +159,23 @@ body {
   margin-bottom: 0;
 }
 
-.label-cbx-supermarkets input:checked+.checkbox {
+.label-cbx-supermarkets input:checked+.checkbox-supermarkets {
   border-color: #88a83e;
 }
 
-.label-cbx-supermarkets input:checked+.checkbox svg path {
+.label-cbx-supermarkets input:checked+.checkbox-supermarkets svg path {
   fill: #88a83e;
 }
 
-.label-cbx-supermarkets input:checked+.checkbox svg polyline {
+.label-cbx-supermarkets input:checked+.checkbox-supermarkets svg polyline {
   stroke-dashoffset: 0;
 }
 
-.label-cbx:hover .checkbox svg path {
+.label-cbx-supermarkets:hover .checkbox-supermarkets svg path {
   stroke-dashoffset: 0;
 }
 
-.label-cbx-supermarkets .checkbox {
+.label-cbx-supermarkets .checkbox-supermarkets {
   position: relative;
   top: 2px;
   float: left;
@@ -176,13 +189,13 @@ body {
   fill: #88a83e;
 }
 
-.label-cbx .checkbox svg {
+.label-cbx-supermarkets .checkbox-supermarkets svg {
   position: absolute;
   top: -2px;
   left: -2px;
 }
 
-.label-cbx-supermarkets .checkbox svg path {
+.label-cbx-supermarkets .checkbox-supermarkets svg path {
   fill: none;
   stroke: #88a83e;
   stroke-width: 2;
@@ -190,10 +203,10 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 71px;
   stroke-dashoffset: 71px;
-  transition: all 0.5s ease;
+  transition: all 0.01s ease;
 }
 
-.label-cbx-supermarkets .checkbox svg polyline {
+.label-cbx-supermarkets .checkbox-supermarkets svg polyline {
   fill: none;
   stroke: #FFF;
   stroke-width: 2;
@@ -201,7 +214,20 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 18px;
   stroke-dashoffset: 18px;
-  transition: all 0.5s ease;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-supermarkets>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-supermarkets {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /* ----------------- */
@@ -212,23 +238,23 @@ body {
   margin-bottom: 0;
 }
 
-.label-cbx-sights input:checked+.checkbox {
+.label-cbx-sights input:checked+.checkbox-sights {
   border-color: #194487;
 }
 
-.label-cbx-sights input:checked+.checkbox svg path {
+.label-cbx-sights input:checked+.checkbox-sights svg path {
   fill: #194487;
 }
 
-.label-cbx-sights input:checked+.checkbox svg polyline {
+.label-cbx-sights input:checked+.checkbox-sights svg polyline {
   stroke-dashoffset: 0;
 }
 
-.label-cbx:hover .checkbox svg path {
+.label-cbx-sights:hover .checkbox-sights svg path {
   stroke-dashoffset: 0;
 }
 
-.label-cbx-sights .checkbox {
+.label-cbx-sights .checkbox-sights {
   position: relative;
   top: 2px;
   float: left;
@@ -242,13 +268,13 @@ body {
   fill: #194487;
 }
 
-.label-cbx .checkbox svg {
+.label-cbx-sights .checkbox-sights svg {
   position: absolute;
   top: -2px;
   left: -2px;
 }
 
-.label-cbx-sights .checkbox svg path {
+.label-cbx-sights .checkbox-sights svg path {
   fill: none;
   stroke: #194487;
   stroke-width: 2;
@@ -256,10 +282,10 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 71px;
   stroke-dashoffset: 71px;
-  transition: all 0.5s ease;
+  transition: all 0.01s ease;
 }
 
-.label-cbx-sights .checkbox svg polyline {
+.label-cbx-sights .checkbox-sights svg polyline {
   fill: none;
   stroke: #FFF;
   stroke-width: 2;
@@ -267,7 +293,20 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 18px;
   stroke-dashoffset: 18px;
-  transition: all 0.5s ease;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-sights>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-sights {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /* ----------------- */
