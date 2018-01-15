@@ -239,11 +239,11 @@ body {
 }
 
 .label-cbx-sights input:checked+.checkbox-sights {
-  border-color: #194487;
+  border-color: #DDB303;
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg path {
-  fill: #194487;
+  fill: #DDB303;
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg polyline {
@@ -265,7 +265,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #194487;
+  fill: #DDB303;
 }
 
 .label-cbx-sights .checkbox-sights svg {
@@ -276,7 +276,7 @@ body {
 
 .label-cbx-sights .checkbox-sights svg path {
   fill: none;
-  stroke: #194487;
+  stroke: #DDB303;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;

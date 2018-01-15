@@ -9,12 +9,12 @@ import styled from 'styled-components'
 import supermarket from '../containers/checkboxes/supermarket';
 
 const FilterItem = styled.div`
-    background: ${props => props.active ? '#222222' : '#364050'};
+    background: ${props => props.active ? '#333333' : '#364050'};
     text-align: left;
     padding-top: 8px;
     padding-bottom: 8px;
-    border-left: ${props => props.active ? `5px solid ${props.color};` : '5px solid #364050;'}
-    box-shadow: 'inset 0 0 2px #222222';
+    border-left: ${props => props.active ? `5px solid ${props.color};` : '5px solid #364050;'};
+    /* box-shadow: ${props => props.active ? 'inset -4px 1px 1px 2px rgba(5, 5, 5, 1)' : null }; */
 `
 
 const MenuItems = [{
@@ -31,9 +31,9 @@ const MenuItems = [{
     category: 'beaches'
 },{
     title: 'Sights',
-    borderColor: '#194487',
+    borderColor: '#FFD819',
     backgroundColor: '#082e68',
-    icon: 'photo',
+    icon: 'find',
     category: 'sights'
 }]
 
@@ -46,7 +46,7 @@ export default class leftSidebar extends React.Component {
 
         <div style={{top: '30px', right: '-24px', position: 'absolute', zIndex: '999'}}></div>
         {MenuItems.map(item => {
-          return <FilterItem key={item.category} active={false} color={item.borderColor} activeBackground={item.backgroundColor}>
+          return <FilterItem key={item.category} active={this.props.appState[item.category]} color={item.borderColor} activeBackground={item.backgroundColor}>
             <Container>
               <Grid style={{ marginRight: '0px' }}>
                 <Grid.Column width={12}>
