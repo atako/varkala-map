@@ -81,11 +81,11 @@ body {
 }
 
 .label-cbx-beaches input:checked+.checkbox-beaches {
-  border-color: #911146;
+  border-color: #BF616A;
 }
 
 .label-cbx-beaches input:checked+.checkbox-beaches svg path {
-  fill: #911146;
+  fill: #BF616A;
 }
 
 .label-cbx-beaches input:checked+.checkbox-beaches svg polyline {
@@ -107,7 +107,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #911146;
+  fill: #BF616A;
 }
 
 .label-cbx-beaches .checkbox-beaches svg {
@@ -118,7 +118,7 @@ body {
 
 .label-cbx-beaches .checkbox-beaches svg path {
   fill: none;
-  stroke: #911146;
+  stroke: #BF616A;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -160,11 +160,11 @@ body {
 }
 
 .label-cbx-supermarkets input:checked+.checkbox-supermarkets {
-  border-color: #88a83e;
+  border-color: #A3BE8C;
 }
 
 .label-cbx-supermarkets input:checked+.checkbox-supermarkets svg path {
-  fill: #88a83e;
+  fill: #A3BE8C;
 }
 
 .label-cbx-supermarkets input:checked+.checkbox-supermarkets svg polyline {
@@ -186,7 +186,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #88a83e;
+  fill: #A3BE8C;
 }
 
 .label-cbx-supermarkets .checkbox-supermarkets svg {
@@ -197,7 +197,7 @@ body {
 
 .label-cbx-supermarkets .checkbox-supermarkets svg path {
   fill: none;
-  stroke: #88a83e;
+  stroke: #A3BE8C;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -239,11 +239,11 @@ body {
 }
 
 .label-cbx-sights input:checked+.checkbox-sights {
-  border-color: #DDB303;
+  border-color: #EBCB8B;
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg path {
-  fill: #DDB303;
+  fill: #EBCB8B;
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg polyline {
@@ -265,7 +265,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #DDB303;
+  fill: #EBCB8B;
 }
 
 .label-cbx-sights .checkbox-sights svg {
@@ -276,7 +276,7 @@ body {
 
 .label-cbx-sights .checkbox-sights svg path {
   fill: none;
-  stroke: #DDB303;
+  stroke: #EBCB8B;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -310,6 +310,249 @@ body {
 }
 
 /* ----------------- */
+
+.label-cbx-sights {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.label-cbx-sights input:checked+.checkbox-sights {
+  border-color: #EBCB8B;
+}
+
+.label-cbx-sights input:checked+.checkbox-sights svg path {
+  fill: #EBCB8B;
+}
+
+.label-cbx-sights input:checked+.checkbox-sights svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx-sights:hover .checkbox-sights svg path {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx-sights .checkbox-sights {
+  position: relative;
+  top: 2px;
+  float: left;
+  margin-left: 25px;
+  margin-top: -10px;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #A0ABBE;
+  border-radius: 3px;
+  fill: #EBCB8B;
+}
+
+.label-cbx-sights .checkbox-sights svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.label-cbx-sights .checkbox-sights svg path {
+  fill: none;
+  stroke: #EBCB8B;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-sights .checkbox-sights svg polyline {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-sights>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-sights {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* ----------------- */
+
+/* ----------------- */
+
+.label-cbx-atm {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.label-cbx-atm input:checked+.checkbox-atm {
+  border-color: #B48EAD;
+}
+
+.label-cbx-atm input:checked+.checkbox-atm svg path {
+  fill: #B48EAD;
+}
+
+.label-cbx-atm input:checked+.checkbox-atm svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx-atm:hover .checkbox-atm svg path {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx-atm .checkbox-atm {
+  position: relative;
+  top: 2px;
+  float: left;
+  margin-left: 25px;
+  margin-top: -10px;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #A0ABBE;
+  border-radius: 3px;
+  fill: #B48EAD;
+}
+
+.label-cbx-atm .checkbox-atm svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.label-cbx-atm .checkbox-atm svg path {
+  fill: none;
+  stroke: #B48EAD;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-atm .checkbox-atm svg polyline {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-atm>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-atm {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* -------------- */
+
+/* ----------------- */
+
+.label-cbx-transport {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.label-cbx-transport input:checked+.checkbox-transport {
+  border-color: #D08770;
+}
+
+.label-cbx-transport input:checked+.checkbox-transport svg path {
+  fill: #D08770;
+}
+
+.label-cbx-transport input:checked+.checkbox-transport svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx-transport:hover .checkbox-transport svg path {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx-transport .checkbox-transport {
+  position: relative;
+  top: 2px;
+  float: left;
+  margin-left: 25px;
+  margin-top: -10px;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #A0ABBE;
+  border-radius: 3px;
+  fill: #D08770;
+}
+
+.label-cbx-transport .checkbox-transport svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.label-cbx-transport .checkbox-transport svg path {
+  fill: none;
+  stroke: #D08770;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-transport .checkbox-transport svg polyline {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.01s ease;
+}
+
+.label-cbx-transport>span {
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.cntr-transport {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* --------------- */
+
+
 .label-cbx>span {
   pointer-events: none;
   vertical-align: middle;
