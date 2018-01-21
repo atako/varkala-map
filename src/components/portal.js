@@ -1,7 +1,7 @@
 import React from 'react'
-import {Segment, TransitionablePortal, Icon, Image, Button } from 'semantic-ui-react'
+import { Segment, TransitionablePortal, Icon, Image, Button, Loader, Dimmer } from 'semantic-ui-react'
 import { showFilter, showPortal, closePortal } from '../actions'
-import Loader from './loader/loader'
+// import Loader from './loader/loader'
 import Slider from 'react-slick'
 import './portal.css'
 
@@ -17,11 +17,11 @@ export default class extends React.Component {
   closePortal = () => this.props.dispatch(closePortal({ showPortal: this.props.ui.showPortal }))
   render() {
     return <TransitionablePortal 
-            open={this.props.ui.showPortal} 
-            transition={{ animation: 'scale', duration: 300 }}
-          >
-      <Segment 
-        style={{  position: 'absolute',
+              open={this.props.ui.showPortal} 
+              transition={{ animation: 'scale', duration: 300 }}
+           >
+      <Segment style = {{  
+                  position: 'absolute',
                   width: '280px',
                   maxHeight: '80%',
                   top: '150px',
@@ -29,7 +29,6 @@ export default class extends React.Component {
                   padding: '0',
                   boxShadow: '-3px 10px 69px 0px rgba(68,68,68,0.63)',
                   border: 'solid white 0px',
-                  
               }}>
         {/* <div style={{
           position: 'relative',
@@ -72,7 +71,7 @@ export default class extends React.Component {
              </div>
           </span>
         </a>
-        {this.props.portalState === 'requested' ? <Loader /> :
+        {this.props.portalState === 'requested' ? <Dimmer active inverted> <Loader inverted>Loading</Loader></Dimmer> :
         <div style={{
           paddingTop: '10px',
           paddingLeft: '1em',
