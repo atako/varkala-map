@@ -42,7 +42,7 @@ export default class Interface extends React.Component {
             <Grid.Column only='computer'>
           <Menu.Item active={true} name='Map' color='olive' style={{ boxShadow: 'inset 0 0 2px #222222' }}>
             <Icon name='map outline' />
-            Карта
+            Map
           </Menu.Item>
           </Grid.Column>
           </Grid>

@@ -58,7 +58,7 @@ const appState = handleActions({
   [actions.changeFilter](state, { payload: checkboxState}) {
     return {...state, [checkboxState.category]: checkboxState.state }
   }
-}, { supermarkets: true, beaches: true, atm: false })
+}, { supermarkets: true, beaches: true, sights: true })
 
 const portal = handleActions({
   [actions.fetchInfoSuccess](state, { payload }) {

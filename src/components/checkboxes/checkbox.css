@@ -3,76 +3,12 @@ body {
   font-size: 16px;
 }
 
-/* .label-cbx {
-  user-select: none;
-  cursor: pointer;
-  margin-bottom: 0;
+:root {
+  --sights: #B38EAD;
+  --beaches: #D08770;
+  --supermarkets: #A3BE8C;
 }
 
-.label-cbx input:checked+.checkbox {
-  border-color: #43BC8A;
-}
-
-.label-cbx input:checked+.checkbox svg path {
-  fill: #43BC8A;
-}
-
-.label-cbx input:checked+.checkbox svg polyline {
-  stroke-dashoffset: 0;
-}
-
-.label-cbx:hover .checkbox svg path {
-  stroke-dashoffset: 0;
-}
-
-.label-cbx .checkbox {
-  position: relative;
-  top: 2px;
-  float: left;
-  margin-left: 25px;
-  margin-top: -10px;
-  margin-right: 8px;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #A0ABBE;
-  border-radius: 3px;
-  fill: #43BC8A;
-}
-
-.label-cbx .checkbox svg {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-}
-
-.label-cbx .checkbox svg path {
-  fill: none;
-  stroke: #43BC8A;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 71px;
-  stroke-dashoffset: 71px;
-  transition: all 0.5s ease;
-}
-
-.label-cbx .checkbox svg polyline {
-  fill: none;
-  stroke: #FFF;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 18px;
-  stroke-dashoffset: 18px;
-  transition: all 0.5s ease;
-}
-
-.label-cbx>span {
-  pointer-events: none;
-  vertical-align: middle;
-} */
-
-/* ------------------ */
 
 .label-cbx-beaches {
   user-select: none;
@@ -81,11 +17,11 @@ body {
 }
 
 .label-cbx-beaches input:checked+.checkbox-beaches {
-  border-color: #BF616A;
+  border-color: var(--beaches);
 }
 
 .label-cbx-beaches input:checked+.checkbox-beaches svg path {
-  fill: #BF616A;
+  fill: var(--beaches);
 }
 
 .label-cbx-beaches input:checked+.checkbox-beaches svg polyline {
@@ -107,7 +43,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #BF616A;
+  fill: var(--beaches);
 }
 
 .label-cbx-beaches .checkbox-beaches svg {
@@ -118,7 +54,7 @@ body {
 
 .label-cbx-beaches .checkbox-beaches svg path {
   fill: none;
-  stroke: #BF616A;
+  stroke: var(--beaches);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -160,11 +96,11 @@ body {
 }
 
 .label-cbx-supermarkets input:checked+.checkbox-supermarkets {
-  border-color: #A3BE8C;
+  border-color: var(--supermarkets);
 }
 
 .label-cbx-supermarkets input:checked+.checkbox-supermarkets svg path {
-  fill: #A3BE8C;
+  fill: var(--supermarkets);
 }
 
 .label-cbx-supermarkets input:checked+.checkbox-supermarkets svg polyline {
@@ -186,7 +122,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #A3BE8C;
+  fill: var(--supermarkets);
 }
 
 .label-cbx-supermarkets .checkbox-supermarkets svg {
@@ -197,7 +133,7 @@ body {
 
 .label-cbx-supermarkets .checkbox-supermarkets svg path {
   fill: none;
-  stroke: #A3BE8C;
+  stroke: var(--supermarkets);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -239,11 +175,11 @@ body {
 }
 
 .label-cbx-sights input:checked+.checkbox-sights {
-  border-color: #EBCB8B;
+  border-color: var(--sights);
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg path {
-  fill: #EBCB8B;
+  fill: var(--sights);
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg polyline {
@@ -265,7 +201,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #EBCB8B;
+  fill: var(--sights);
 }
 
 .label-cbx-sights .checkbox-sights svg {
@@ -276,7 +212,7 @@ body {
 
 .label-cbx-sights .checkbox-sights svg path {
   fill: none;
-  stroke: #EBCB8B;
+  stroke: var(--sights);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -318,11 +254,11 @@ body {
 }
 
 .label-cbx-sights input:checked+.checkbox-sights {
-  border-color: #EBCB8B;
+  border-color: var(--sights);
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg path {
-  fill: #EBCB8B;
+  fill: var(--sights);
 }
 
 .label-cbx-sights input:checked+.checkbox-sights svg polyline {
@@ -344,7 +280,7 @@ body {
   height: 20px;
   border: 2px solid #A0ABBE;
   border-radius: 3px;
-  fill: #EBCB8B;
+  fill: var(--sights);
 }
 
 .label-cbx-sights .checkbox-sights svg {
@@ -355,7 +291,7 @@ body {
 
 .label-cbx-sights .checkbox-sights svg path {
   fill: none;
-  stroke: #EBCB8B;
+  stroke: var(--sights);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;

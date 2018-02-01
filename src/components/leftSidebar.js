@@ -24,29 +24,17 @@ const MenuItems = [{
     category: 'supermarkets'
 },{
     title: 'Beaches',
-    borderColor: '#BF616A',
+    borderColor: '#D08770',
     backgroundColor: '#510A2A',
     icon: 'umbrella',
     category: 'beaches'
 },{
     title: 'Sights',
-    borderColor: '#EBCB8B',
+    borderColor: '#B38EAD',
     backgroundColor: '#082e68',
     icon: 'find',
     category: 'sights'
-},{
-    title: 'Atm',
-    borderColor: '#B48EAD',
-    backgroundColor: '#082e68',
-    icon: 'money',
-    category: 'atm'
-  },{
-    title: 'Transport',
-    borderColor: '#D08770',
-    backgroundColor: '#082e68',
-    icon: 'taxi',
-    category: 'transport'
-  }]
+}]
 
 export default class leftSidebar extends React.Component {
   
