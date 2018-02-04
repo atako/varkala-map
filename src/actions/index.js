@@ -50,3 +50,5 @@ export const fetchPoints = (id) => async (dispatch) => {
 }
 
 export const setActivePoint = createAction('POINT_SET_ACTIVE')
+
+export const setInterfaceLocal = createAction('INTERFACE_SET_LANGUAGE')

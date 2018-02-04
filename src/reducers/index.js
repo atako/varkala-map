@@ -96,6 +96,12 @@ const activeIcon = handleActions({
   }
 }, null)
 
+const local = handleActions({
+  [actions.setInterfaceLocal](state, {payload}) {
+    return payload
+  }
+}, 'en-GB')
+
 export default combineReducers({
   ui,
   objects,
@@ -103,5 +109,6 @@ export default combineReducers({
   portal,
   portalState,
   currentPoint,
-  activeIcon
+  activeIcon,
+  local
 })

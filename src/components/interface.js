@@ -25,6 +25,7 @@ export default class Interface extends React.Component {
     }
   }
   render() {
+    console.log(this.props)
     const isMobile = window.innerWidth <= 500
     return (
       <div style={{ position: 'fixed', width: '100%'}}>
@@ -42,7 +43,7 @@ export default class Interface extends React.Component {
             <Grid.Column only='computer'>
           <Menu.Item active={true} name='Map' color='olive' style={{ boxShadow: 'inset 0 0 2px #222222' }}>
             <Icon name='map outline' />
-            Map
+            {this.props.local.includes("ru") ? 'Карта' : 'Map'}
           </Menu.Item>
           </Grid.Column>
           </Grid>

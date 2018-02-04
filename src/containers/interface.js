@@ -3,7 +3,8 @@ import Component from '../components/interface'
 
 const mapStateToProps = state => {
   const props = {
-    ui: state.ui
+    ui: state.ui,
+    local: state.local
   }
   return props
 }
