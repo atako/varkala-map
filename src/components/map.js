@@ -61,7 +61,15 @@ const MyMapComponent = compose(
       <Marker
         key={i}
         position={{ lat: item.lat, lng: item.lng }}
-        icon={props.activeIcon === item.id ? `/icons/${item.category}_active.png` : `/icons/${item.category}.png`}
+        // icon={
+        //   props.activeIcon === item.id ? 
+        //   `/icons/${item.category}_active.png` :
+        //   `/icons/${item.category}.png`}
+        options={{
+          icon: {
+            url: props.activeIcon === item.id ? `/icons/${item.category}_active.png` : `/icons/${item.category}.png`, 
+            scaledSize:{width: 25, height: 34 }
+           }}}
         onMouseOver={props.activeIcon === item.id ? null: () => props.toggleInfoWindow(item.id, true)}
         onMouseOut={props.activeIcon === item.id ? null : () => props.toggleInfoWindow(item.id, false)}
         onClick={() => props.fetchInfo(item)}
