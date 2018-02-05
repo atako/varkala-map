@@ -8,6 +8,7 @@
     "loaders.css": "^0.1.2",
     "mobile-detect": "^1.4.1",
     "react": "^16.2.0",
+    "react-cookie": "^2.1.2",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.3",
     "react-loaders": "^3.0.1",

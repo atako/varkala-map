@@ -17,16 +17,16 @@ export const fetchInfo = (item) => async (dispatch) => {
   dispatch(fetchInfoLocal(item))
   dispatch(fetchInfoRequest());
   try {
-    const url = `https://varkala-map-1512622053521.firebaseio.com/objects/${item.id}.json`
+    const url = `https://varkala-map-1512622053521.firebaseio.com/descriptions/${item.id}.json`
     const response = await axios.get(url)
     if (response.data === null) {
       dispatch(fetchInfoFailure())
     } else {
       // console.log(response.data)
-      dispatch(fetchInfoSuccess({ info: response.data }));
+      dispatch(fetchInfoSuccess({ info: response.data }))
     }
   } catch (e) {
-    dispatch(fetchInfoFailure());
+    dispatch(fetchInfoFailure())
   }
 }
 
@@ -42,10 +42,10 @@ export const fetchPoints = (id) => async (dispatch) => {
     if (response.data === null) {
       dispatch(fetchInfoFailure())
     } else {
-      dispatch(fetchPointsSuccess({ info: Object.values(response.data) }));
+      dispatch(fetchPointsSuccess({ info: Object.values(response.data) }))
     }
   } catch (e) {
-    dispatch(fetchPointsFailure());
+    dispatch(fetchPointsFailure())
   }
 }
 

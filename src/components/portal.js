@@ -16,6 +16,8 @@ const settings = {
 export default class extends React.Component {
   closePortal = () => this.props.dispatch(closePortal({ showPortal: this.props.ui.showPortal }))
   render() {
+    const localPrefix = this.props.local.includes("ru") ? 'ru' : 'en' 
+    console.log(this.props.currentPoint)
     return <TransitionablePortal 
               open={this.props.ui.showPortal} 
               transition={{ animation: 'scale', duration: 300 }}
@@ -92,8 +94,8 @@ export default class extends React.Component {
             marginTop: '20px',
             marginBottom: '10px',
             color: '#333333',
-          }}>{this.props.currentPoint.title}</div>
-            <div style={{
+            }}>{ localPrefix === 'ru' ? this.props.currentPoint.ru_title : this.props.currentPoint.en_title } </div>
+            {localPrefix === 'ru' ? <div style={{
               fontFamily: 'Open Sans',
               fontSize: '20px',
               fontWeight: '600',
@@ -101,7 +103,7 @@ export default class extends React.Component {
               marginBottom: '17px',
               color: '#555555',
               lineHeight: '1.5'
-            }}>{this.props.currentPoint.en_title}</div>
+            }}> {this.props.currentPoint.en_title}</div> : null }
           <div style={{
               fontFamily: 'Open Sans',
               fontSize: '15px',
@@ -110,7 +112,7 @@ export default class extends React.Component {
               marginBottom: '20px',
               color: '#333333',
               lineHeight: '1.4em'
-          }}>{this.props.portal.description}</div>
+            }}>{localPrefix === 'ru' ? this.props.currentPoint.ru_description : this.props.currentPoint.en_description }</div>
           {/* <Button color='green'>Подробнее</Button> */}
         </div>}
         

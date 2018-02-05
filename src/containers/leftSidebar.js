@@ -4,7 +4,8 @@ import Component from '../components/leftSidebar'
 const mapStateToProps = state => {
   const props = {
     ui: state.ui,
-    appState: state.appState
+    appState: state.appState,
+    local: state.local
   }
   return props
 }

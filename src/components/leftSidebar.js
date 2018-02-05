@@ -17,19 +17,22 @@ const FilterItem = styled.div`
 `
 
 const MenuItems = [{
-    title: 'Supermarkets',
+    en_title: 'Supermarkets',
+    ru_title: 'Супермаркеты',
     borderColor: '#A3BE8C',
     backgroundColor: '#4D5B15',
     icon: 'shop',
     category: 'supermarkets'
 },{
-    title: 'Beaches',
+    en_title: 'Beaches',
+    ru_title: 'Пляжи',
     borderColor: '#D08770',
     backgroundColor: '#510A2A',
     icon: 'umbrella',
     category: 'beaches'
 },{
-    title: 'Sights',
+    en_title: 'Sights',
+    ru_title: 'Места',
     borderColor: '#B38EAD',
     backgroundColor: '#082e68',
     icon: 'find',
@@ -39,8 +42,8 @@ const MenuItems = [{
 export default class leftSidebar extends React.Component {
   
   toggleVisibility = () => this.props.dispatch(showFilter({ showFilter: this.props.ui.showFilter }))
-
   render() {
+    const localPrefix = this.props.local.includes("ru") ? 'ru' : 'en' 
     return <Sidebar as={Menu} animation='overlay' width='wide' visible={this.props.ui.showFilter} icon='labeled' vertical style={{ background: '#2E3440', width: '280px', paddingTop: '30px', borderLeft: '0px' }} >
 
         <div style={{top: '30px', right: '-24px', position: 'absolute', zIndex: '999'}}></div>
@@ -51,7 +54,7 @@ export default class leftSidebar extends React.Component {
                 <Grid.Column width={12}>
                   <div className='title' style={{ color: '#A0ABBE', fontFamily: 'Open Sans', fontSize: '16px', marginLeft: '10px' }}>
                     <Icon inverted name={item.icon} size='big' style={{ marginTop: '-3px', marginRight: '10px', color: '#A0ABBE' }} />
-                    {item.title}
+                    {localPrefix === 'ru' ? item.ru_title : item.en_title }
                   </div>
                 </Grid.Column>
                 <Grid.Column width={2}>

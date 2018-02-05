@@ -57,6 +57,7 @@ const MyMapComponent = compose(
       }}
       fullscreenControl={false}
     >
+    {console.log(props)}
     {props.objects.map((item, i) =>
       <Marker
         key={i}
@@ -109,7 +110,7 @@ const MyMapComponent = compose(
               textOverflow: 'ellipsis',
               fontSize: `14px`, 
               fontColor: `#444444` }}>
-             {item.title}
+             {props.local === 'ru' ? item.ru_title : item.en_title}
             </div>
           </div>
         </InfoBox>
@@ -148,7 +149,7 @@ const MyMapComponent = compose(
               fontSize: `14px`,
               fontColor: `#444444`
             }}>
-              {item.title}
+              {props.local === 'ru' ? item.ru_title : item.en_title}
             </div>
           </div>
         </InfoBox> : null}
@@ -177,6 +178,7 @@ export default class Map extends React.Component {
         objects = {this.props.objects}
         fetchInfo = {this.props.fetchInfo}
         activeIcon = {this.props.activeIcon}
+        local = {this.props.local}
      />
      </div>
   }

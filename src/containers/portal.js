@@ -6,7 +6,8 @@ const mapStateToProps = state => {
     ui: state.ui,
     portal: state.portal,
     portalState: state.portalState,
-    currentPoint: state.currentPoint
+    currentPoint: state.currentPoint,
+    local: state.local
   }
   return props
 }

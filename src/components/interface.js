@@ -25,7 +25,6 @@ export default class Interface extends React.Component {
     }
   }
   render() {
-    console.log(this.props)
     const isMobile = window.innerWidth <= 500
     return (
       <div style={{ position: 'fixed', width: '100%'}}>

@@ -6,7 +6,8 @@ const mapStateToProps = state => {
   const props = {
     ui: state.ui,
     objects: state.objects,
-    activeIcon: state.activeIcon
+    activeIcon: state.activeIcon,
+    local: state.local
   }
   return props
 }
