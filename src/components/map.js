@@ -57,7 +57,6 @@ const MyMapComponent = compose(
       }}
       fullscreenControl={false}
     >
-    {console.log(props)}
     {props.objects.map((item, i) =>
       <Marker
         key={i}

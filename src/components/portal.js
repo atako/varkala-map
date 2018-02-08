@@ -17,7 +17,6 @@ export default class extends React.Component {
   closePortal = () => this.props.dispatch(closePortal({ showPortal: this.props.ui.showPortal }))
   render() {
     const localPrefix = this.props.local.includes("ru") ? 'ru' : 'en' 
-    console.log(this.props.currentPoint)
     return <TransitionablePortal 
               open={this.props.ui.showPortal} 
               transition={{ animation: 'scale', duration: 300 }}

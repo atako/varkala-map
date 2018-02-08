@@ -2,6 +2,7 @@ import React from 'react'
 import Map from '../containers/map'
 import Portal from '../containers/portal'
 import LeftSidebar from '../containers/leftSidebar'
+import Search from './search'
 import { showFilter, showPortal } from '../actions'
 import { Menu, Icon, Sidebar, Segment, Grid } from 'semantic-ui-react'
 import Styled from 'styled-components'
@@ -39,11 +40,19 @@ export default class Interface extends React.Component {
             <img src='/images/logo.png' style={{width: '130px'}} />
           </StyledLogo>
           <Grid>
-            <Grid.Column only='computer'>
+            <Grid.Column only='computer' width={5}>
           <Menu.Item active={true} name='Map' color='olive' style={{ boxShadow: 'inset 0 0 2px #222222' }}>
             <Icon name='map outline' />
             {this.props.local.includes("ru") ? 'Карта' : 'Map'}
           </Menu.Item>
+          </Grid.Column>
+          <Grid.Column width={6} />
+          <Grid.Column width={5} style={{ 
+              position: 'absolute',
+              top: '3%',
+              left: '75%'
+           }}>
+            <Search />
           </Grid.Column>
           </Grid>
           {/* <Menu.Item>
