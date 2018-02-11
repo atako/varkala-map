@@ -1,12 +1,8 @@
 import React from 'react'
 import { Menu, Icon, Sidebar, Container, Grid } from 'semantic-ui-react'
-import BeachCheck from '../containers/checkboxes/beach'
-import AtmCheck from './checkboxes/atm'
-import SuperCheck from '../containers/checkboxes/supermarket'
 import CheckBox from '../containers/checkboxes/checkbox'
 import { showFilter } from '../actions'
 import styled from 'styled-components'
-import supermarket from '../containers/checkboxes/supermarket';
 
 const FilterItem = styled.div`
     background: ${props => props.active ? '#434C5E' : '#2E3440'};

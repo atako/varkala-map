@@ -2,11 +2,11 @@ import React from 'react'
 import Map from '../containers/map'
 import Portal from '../containers/portal'
 import LeftSidebar from '../containers/leftSidebar'
-import Search from './search'
+// import Search from './search'
 import { showFilter, showPortal } from '../actions'
 import { Menu, Icon, Sidebar, Segment, Grid } from 'semantic-ui-react'
 import Styled from 'styled-components'
-import { componentWillUnmount, componentDidMount } from 'react-google-maps/lib/utils/MapChildHelper';
+// import { componentWillUnmount, componentDidMount } from 'react-google-maps/lib/utils/MapChildHelper';
 
 const StyledLogo = Styled(Menu.Item)`
   &&&&:before {
@@ -37,7 +37,7 @@ export default class Interface extends React.Component {
             <Icon name='content' size='huge' />
           </Menu.Item>
           <StyledLogo style={{ width: '197px', fontFamily: 'Arvo', fontSize: '20px', marginTop: '13px' , padding: '0px'}}>
-            <img src='/images/logo.png' style={{width: '130px'}} />
+            <img src='/images/logo.png' alt='varkala.online logo' style={{width: '130px'}} />
           </StyledLogo>
           <Grid>
             <Grid.Column only='computer' width={5}>
@@ -52,7 +52,7 @@ export default class Interface extends React.Component {
               top: '3%',
               left: '75%'
            }}>
-            <Search />
+            {/* <Search /> */}
           </Grid.Column>
           </Grid>
           {/* <Menu.Item>

@@ -1,7 +1,7 @@
 import { times, escapeRegExp, filter } from 'lodash'
 import React, { Component } from 'react'
 import faker from 'faker'
-import { Search, Grid, Header } from 'semantic-ui-react'
+import { Search } from 'semantic-ui-react'
 
 const source = times(5, () => ({
   title: faker.company.companyName(),

@@ -1,15 +1,14 @@
 /*global google */
 import React from "react";
-import { compose, withProps, withStateHandlers } from "recompose"
+import { compose, withProps } from "recompose"
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
-  InfoWindow
+  Marker
 } from "react-google-maps"
 // import styled from 'styled-components'
-import { showFilter, showPortal, showInfoWindow, fetchInfo } from '../actions'
+// import { showFilter, showPortal, showInfoWindow, fetchInfo } from '../actions'
 import './map.css'
 const style = require('../mapstyle.json')
 const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox")
@@ -38,9 +37,7 @@ const MyMapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap
-)
-  (props =>(
-    <GoogleMap
+)(props => (<GoogleMap
       defaultZoom={14}
       defaultCenter={{ lat: 8.737457, lng: 76.708158 }}
       defaultOptions={{

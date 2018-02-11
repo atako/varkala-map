@@ -1,6 +1,6 @@
 import React from 'react'
-import { Segment, TransitionablePortal, Icon, Image, Button, Loader, Dimmer } from 'semantic-ui-react'
-import { showFilter, showPortal, closePortal } from '../actions'
+import { Segment, TransitionablePortal, Loader, Dimmer } from 'semantic-ui-react'
+import { closePortal } from '../actions'
 // import Loader from './loader/loader'
 import Slider from 'react-slick'
 import './portal.css'
@@ -54,7 +54,7 @@ export default class extends React.Component {
             backgroundSize: 'cover',
           }} />
         </Slider>
-        <a href='#' onClick={this.closePortal}>
+        <button onClick={this.closePortal}>
         <span>
           <div 
             // corner={true} 
@@ -71,7 +71,7 @@ export default class extends React.Component {
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28"><path  fill-width="5" fill="#fff" d="M12 10.586L8.707 7.293a1 1 0 0 0-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 0 0 1.414 1.414L12 13.414l3.293 3.293a1 1 0 0 0 1.414-1.414L13.414 12l3.293-3.293a1 1 0 1 0-1.414-1.414L12 10.586z"></path></svg>
              </div>
           </span>
-        </a>
+        </button>
         {this.props.portalState === 'requested' ? <Dimmer active inverted> <Loader inverted>Loading</Loader></Dimmer> :
         <div style={{
           paddingTop: '10px',

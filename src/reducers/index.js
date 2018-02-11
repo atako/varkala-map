@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { handleActions, handleAction } from 'redux-actions'
+import { handleActions } from 'redux-actions'
 import { set, reduce } from 'lodash'
 import * as actions from '../actions'
 
